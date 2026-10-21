@@ -1,0 +1,14 @@
+{
+  "name": "scooter-time-demo-tools",
+  "private": true,
+  "type": "module",
+  "description": "Инструменты сбора фото и самопроверки. Сам сайт — статика без сборки.",
+  "scripts": {
+    "serve": "node tools/serve.mjs 8216"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.64.1",
+    "sharp": "^0.35.5",
+    "subset-font": "^2.9.0"
+  }
+}

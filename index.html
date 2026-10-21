@@ -1,0 +1,822 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>The Scooter Time — прокат ретро-скутеров в центре Казани</title>
+  <meta name="description" content="Прокат ретро-мопедов на Кремлёвской, 21 в Казани: 1 час — 1 000 ₽, 2 часа — 1 700 ₽, 4 часа — 3 200 ₽. Полный бак, шлем и трос в комплекте. Ежедневно 10:00–00:00, бронь по телефону 216-52-90.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#1C1B19">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="The Scooter Time — берите время напрокат">
+  <meta property="og:description" content="Ретро-мопеды в центре Казани: от 1 000 ₽ за час, Кремлёвская, 21.">
+  <meta property="og:url" content="https://purich755.github.io/Scooter-Time/">
+  <meta property="og:image" content="https://purich755.github.io/Scooter-Time/assets/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-48.png" sizes="48x48" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <script>
+    /* Прелоадер — только при первом визите в сессии и без reduced-motion. Решаем до первой отрисовки. */
+    (function () {
+      var d = document.documentElement, seen = false;
+      try { seen = sessionStorage.getItem('st-pre') === '1'; } catch (e) {}
+      if (!seen && !matchMedia('(prefers-reduced-motion: reduce)').matches) d.setAttribute('data-pre', '');
+      d.setAttribute('data-js', '');
+    })();
+  </script>
+  <link rel="preload" as="image" href="assets/img/city/hero-640.webp" type="image/webp" media="(max-width: 767px)" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/img/city/hero-1390.webp" type="image/webp" media="(min-width: 768px)" fetchpriority="high">
+  <script>
+    /* предзагрузка шрифтов первого экрана; на file:// preload шрифта даёт ошибку CORS — там без неё */
+    if (location.protocol !== 'file:') ['cormorant', 'cormorant-i', 'manrope', 'alumni'].forEach(function (f) {
+      var l = document.createElement('link'); l.rel = 'preload'; l.as = 'font'; l.type = 'font/woff2'; l.crossOrigin = ''; l.href = 'assets/fonts/' + f + '.woff2'; document.head.appendChild(l);
+    });
+  </script>
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "The Scooter Time",
+    "description": "Прокат ретро-скутеров (мопедов) в центре Казани: почасовая аренда, экскурсии, выездные фотосессии, романтические прогулки, подарочные сертификаты.",
+    "url": "https://purich755.github.io/Scooter-Time/",
+    "image": "https://purich755.github.io/Scooter-Time/assets/img/og.jpg",
+    "logo": "https://purich755.github.io/Scooter-Time/assets/img/logo/logo-320.png",
+    "telephone": "+7 843 216-52-90",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Кремлёвская улица, 21",
+      "addressLocality": "Казань",
+      "postalCode": "420111",
+      "addressCountry": "RU"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 55.793575, "longitude": 49.116455 },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "10:00", "closes": "23:59"
+    }],
+    "priceRange": "1000–3200 ₽",
+    "paymentAccepted": "Банковская карта",
+    "sameAs": ["https://vk.ru/rent_scooters", "https://www.instagram.com/rent_scooter/"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Перейти к содержанию</a>
+
+  <!-- иконки: тонкие линии 1.5 px, нарисованы под этот сайт -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 3.5h2.6l1.4 4.2-2 1.4a12 12 0 0 0 6.3 6.3l1.4-2 4.2 1.4v2.6a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2z"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><circle cx="7" cy="12" r="3.6"/><circle cx="7" cy="12" r="1"/><path d="M10.6 12H21M17.5 12v3M20.5 12v2.2"/></symbol>
+    <symbol id="i-helmet" viewBox="0 0 24 24"><path d="M3.5 16.5v-2a8.5 8.5 0 0 1 17 0v2z"/><path d="M12.5 8.4c3.6.4 6.2 2.6 7.3 5.6h-7.3z"/><path d="M6.5 16.5v2.6h3.4"/></symbol>
+    <symbol id="i-fuel" viewBox="0 0 24 24"><path d="M5.5 7.5h8.8l3.7 3.7v9.3H5.5z"/><path d="M8 4.5h5v3"/><path d="M8.6 12.2l5.8 5.8M14.4 12.2l-5.8 5.8"/></symbol>
+    <symbol id="i-rope" viewBox="0 0 24 24"><path d="M12 19.5a7.5 7.5 0 1 1 6.6-11"/><path d="M12 16a4 4 0 1 1 3.4-6"/><rect x="14.5" y="13" width="6" height="6.5" rx="1"/><path d="M15.9 13v-1.4a1.6 1.6 0 0 1 3.2 0V13"/></symbol>
+    <symbol id="i-metro" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M7.4 15.8V8.4l4.6 6 4.6-6v7.4"/></symbol>
+    <symbol id="i-bus" viewBox="0 0 24 24"><rect x="5" y="3.5" width="14" height="15" rx="2.5"/><path d="M5 11.5h14M8 18.5v2M16 18.5v2"/><circle cx="8.5" cy="15" r=".6"/><circle cx="15.5" cy="15" r=".6"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+    <symbol id="i-card" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12.5" rx="2"/><path d="M3 10h18M6.5 15h4"/></symbol>
+    <symbol id="i-vk" viewBox="0 0 24 24"><path d="M3.5 8l3.2 8.5L10 8"/><path d="M13 7.5v9M13 13l5-5.5M15.2 11l3.6 5.5"/></symbol>
+    <symbol id="i-insta" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4.5"/><circle cx="12" cy="12" r="3.8"/><circle cx="16.9" cy="7.1" r=".6"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol>
+    <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="6" r="2.2"/><path d="M8.2 18h6.3a3.2 3.2 0 0 0 0-6.4h-5a3.2 3.2 0 0 1 0-6.4h6.3"/></symbol>
+  </svg>
+
+  <div class="grain" aria-hidden="true"><div class="grain-in"></div></div>
+
+  <!-- 00 · Прелоадер «Заводимся» -->
+  <div class="pre" aria-hidden="true">
+    <div class="pre-in">
+      <div class="pre-gauge"></div>
+      <p class="pre-cap">THE SCOOTER TIME · КАЗАНЬ</p>
+    </div>
+  </div>
+
+  <div class="cursor is-hidden" aria-hidden="true"><span class="cursor-dot"></span><span class="cursor-label"></span></div>
+
+  <!-- 01 · Шапка -->
+  <header class="hdr" id="hdr">
+    <a class="hdr-logo" href="#top" aria-label="The Scooter Time — наверх">
+      <picture><source type="image/webp" srcset="assets/img/logo/logo-160.webp"><img src="assets/img/logo/logo-320.png" width="160" height="160" alt=""></picture>
+    </a>
+    <nav class="hdr-nav" aria-label="Разделы">
+      <a href="#garage">Гараж</a><a href="#tariffs">Тарифы</a><a href="#services">Услуги</a><a href="#gift">Сертификат</a><a href="#find">Как найти</a>
+    </nav>
+    <div class="hdr-right">
+      <div class="hdr-clock" aria-live="off">
+        <span class="hdr-gauge"></span>
+        <span class="hdr-status" data-status-short>ЕЖЕДНЕВНО · 10:00–00:00</span>
+      </div>
+      <a class="hdr-phone" href="tel:+78432165290" aria-label="Позвонить: +7 843 216-52-90"><svg class="ic"><use href="#i-phone"/></svg><span>216-52-90</span></a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="mmenu" aria-label="Открыть меню"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="mmenu" id="mmenu" data-lenis-prevent hidden>
+    <nav class="mmenu-nav" aria-label="Меню">
+      <a href="#garage"><span>Гараж</span></a>
+      <a href="#tariffs"><span>Тарифы</span></a>
+      <a href="#services"><span>Услуги</span></a>
+      <a href="#gift"><span>Сертификат</span></a>
+      <a href="#clients"><span>Наши клиенты</span></a>
+      <a href="#find"><span>Как найти</span></a>
+    </nav>
+    <div class="mmenu-foot">
+      <a class="btn btn--signal" href="tel:+78432165290"><span>Позвонить: 216-52-90</span></a>
+      <a class="btn btn--ghost" href="https://vk.ru/rent_scooters" target="_blank" rel="noopener"><svg class="ic"><use href="#i-vk"/></svg><span>Мы ВКонтакте</span></a>
+      <p class="mmenu-hours lbl" data-status-long>ЕЖЕДНЕВНО · 10:00–00:00</p>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- 02 · HERO -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-media">
+        <div class="hero-par">
+          <picture>
+            <source type="image/webp" media="(max-width: 767px)" srcset="assets/img/city/hero-640.webp">
+            <source type="image/webp" media="(min-width: 768px)" srcset="assets/img/city/hero-1390.webp">
+            <source type="image/jpeg" media="(max-width: 767px)" srcset="assets/img/city/hero-640.jpg">
+            <img class="hero-img" src="assets/img/city/hero-1390.jpg" width="1390" height="1472" alt="Две девушки на серебристом ретро-мопеде на вечерней улице в центре Казани" fetchpriority="high" decoding="async">
+          </picture>
+          <span class="hero-lamp" aria-hidden="true"></span>
+        </div>
+      </div>
+      <div class="hero-shade" aria-hidden="true"></div>
+
+      <div class="hero-grid">
+        <div class="hero-text">
+          <p class="lbl hero-lbl rise" style="--d:0">ПРОКАТ РЕТРО-СКУТЕРОВ <i>·</i> КАЗАНЬ</p>
+          <h1 class="hero-h1" id="hero-title"><span class="w"><span style="--i:0">Берите</span></span> <span class="w"><em style="--i:1">время</em></span><br> <span class="w"><span style="--i:2">напрокат</span></span></h1>
+          <p class="hero-sub rise" style="--d:3">Ретро-мопеды с полным баком, шлемом и характером. У&nbsp;каждого — своё имя. От&nbsp;часа до&nbsp;целой ночи.</p>
+          <div class="hero-cta rise" style="--d:4">
+            <a class="btn btn--signal" href="tel:+78432165290" data-magnetic><svg class="ic"><use href="#i-phone"/></svg><span>Позвонить и забронировать</span></a>
+            <a class="link-arrow" href="#tariffs" data-scroll>Сколько стоит час <svg class="ic"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+
+        <div class="hero-dash">
+          <div class="hero-gauge" role="img" aria-label="Часы: время в Казани" data-hero-gauge></div>
+          <div class="hero-key">
+            <button class="ign" type="button" aria-pressed="false" aria-label="Повернуть ключ зажигания" data-hero-key></button>
+            <span class="hand-note hero-key-note" aria-hidden="true">поверните</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="hero-facts lbl rise" style="--d:5"><span>КРЕМЛЁВСКАЯ, 21</span><i>·</i><span>750&nbsp;М ОТ МЕТРО «КРЕМЛЁВСКАЯ»</span><i>·</i><span>ОТ 1&nbsp;000&nbsp;₽ / ЧАС</span></p>
+    </section>
+
+    <!-- 03 · Хром-лента услуг -->
+    <section class="ribbon-sec" aria-label="Что мы делаем">
+      <div class="ribbon">
+        <div class="ribbon-track">
+          <p class="ribbon-row">ПОЧАСОВАЯ АРЕНДА <i>●</i> ЭКСКУРСИИ ПО КАЗАНИ <i>●</i> ВЫЕЗДНЫЕ ФОТОСЕССИИ <i>●</i> РОМАНТИЧЕСКИЕ ПРОГУЛКИ <i>●</i> ПОДАРОЧНЫЕ СЕРТИФИКАТЫ <i>●</i>&nbsp;</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 · Манифест -->
+    <section class="manifest" aria-labelledby="mf-title">
+      <div class="wrap mf-grid">
+        <div class="mf-text">
+          <p class="lbl" data-rv>ЗОЛОТАЯ ЭПОХА</p>
+          <h2 class="visually-hidden" id="mf-title">Золотая эпоха</h2>
+          <p class="mf-words" data-words>Ретро-скутер — это не&nbsp;просто транспорт. Это стиль, элегантность и&nbsp;немного другой ритм. Здесь не&nbsp;торопятся — здесь катаются.</p>
+          <blockquote class="mf-quote" data-rv>
+            <p>«На наших мопедах можно обогнать время и&nbsp;украсть пару ярких моментов».</p>
+            <cite class="lbl">ИЗ НАШЕГО VK</cite>
+          </blockquote>
+        </div>
+        <figure class="mf-photo">
+          <div class="mf-frame" data-photo>
+            <picture>
+              <source type="image/webp" srcset="assets/img/scooters/manifest-480.webp 480w, assets/img/scooters/manifest-767.webp 767w" sizes="(min-width: 1024px) 34vw, 90vw">
+              <img src="assets/img/scooters/manifest-480.jpg" srcset="assets/img/scooters/manifest-480.jpg 480w, assets/img/scooters/manifest-767.jpg 767w" sizes="(min-width: 1024px) 34vw, 90vw" width="767" height="960" alt="Серебристый ретро-мопед с номером 2 и девушка в жёлтой юбке" loading="lazy" decoding="async">
+            </picture>
+            <svg class="mf-scratch" viewBox="0 0 400 500" preserveAspectRatio="none" aria-hidden="true"></svg>
+          </div>
+          <figcaption class="hand-note mf-note">
+            <svg class="mf-arrow draw" viewBox="0 0 120 90" aria-hidden="true"><path d="M8 12c30 4 62 20 78 46 6 10 8 18 9 24M80 70l15 12 6-18"/></svg>
+            <span>вот так выглядит час счастья</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 05 · Гараж -->
+    <section class="garage" id="garage" aria-labelledby="garage-title">
+      <div class="wrap garage-head">
+        <div>
+          <p class="lbl" data-rv>ГАРАЖ</p>
+          <h2 class="h2" id="garage-title" data-split>Здесь у&nbsp;каждого мопеда есть имя</h2>
+        </div>
+        <div class="garage-lead">
+          <p data-rv>Мы относимся к&nbsp;своим мопедам с&nbsp;особой теплотой. Для нас они больше, чем транспорт, поэтому у&nbsp;каждого своё имя. Знакомьтесь лично.</p>
+          <div class="garage-ctrl" data-rv>
+            <button class="round-btn" type="button" data-garage-prev aria-label="Предыдущий мопед"><svg class="ic flip"><use href="#i-arrow"/></svg></button>
+            <button class="round-btn" type="button" data-garage-next aria-label="Следующий мопед"><svg class="ic"><use href="#i-arrow"/></svg></button>
+            <span class="hand-note">тяните ленту</span>
+          </div>
+        </div>
+      </div>
+      <div class="garage-view" data-cursor="ТЯНИ" tabindex="0" role="region" aria-label="Мопеды гаража, листайте стрелками">
+        <ul class="garage-track">
+<!--@GARAGE-->
+          <li class="car" style="--sw:#8FD6C2" data-car="0">
+            <button class="car-photo" type="button" data-lb="garage" data-full="assets/img/scooters/mint-1100.webp" data-full-jpg="assets/img/scooters/mint-1100.jpg" data-w="1100" data-h="1467" aria-label="Открыть фото: мятный мопед" data-cursor="СМОТРЕТЬ">
+              <picture><source type="image/webp" srcset="assets/img/scooters/mint-560.webp 560w, assets/img/scooters/mint-1100.webp 1100w" sizes="(min-width: 768px) 340px, 72vw"><img src="assets/img/scooters/mint-560.jpg" srcset="assets/img/scooters/mint-560.jpg 560w, assets/img/scooters/mint-1100.jpg 1100w" sizes="(min-width: 768px) 340px, 72vw" width="1100" height="1467" alt="Мятный ретро-мопед на улице в центре Казани" loading="lazy" decoding="async"></picture>
+              <span class="car-lamp" aria-hidden="true"></span>
+              <span class="car-on" aria-hidden="true">ON</span>
+            </button>
+            <div class="car-meta">
+              <p class="car-color"><i aria-hidden="true"></i>МЯТНЫЙ</p>
+              <button class="car-key" type="button" aria-pressed="false" aria-label="Повернуть ключ: мятный мопед, имя — при встрече" data-key><span class="car-key-fb">ИМЯ — ПРИ ВСТРЕЧЕ</span></button>
+              <p class="hand-note car-note">у каждого своё, честно</p>
+            </div>
+          </li>
+          <li class="car car--cherry" style="--sw:#C2302A" data-car="1">
+            <button class="car-photo" type="button" data-lb="garage" data-full="assets/img/scooters/red-900.webp" data-full-jpg="assets/img/scooters/red-900.jpg" data-w="900" data-h="1125" aria-label="Открыть фото: красный мопед" data-cursor="СМОТРЕТЬ">
+              <picture><source type="image/webp" srcset="assets/img/scooters/red-560.webp 560w, assets/img/scooters/red-900.webp 900w" sizes="(min-width: 768px) 340px, 72vw"><img src="assets/img/scooters/red-560.jpg" srcset="assets/img/scooters/red-560.jpg 560w, assets/img/scooters/red-900.jpg 900w" sizes="(min-width: 768px) 340px, 72vw" width="900" height="1125" alt="Красно-кремовый ретро-мопед на солнечной улице" loading="lazy" decoding="async"></picture>
+              <span class="car-lamp" aria-hidden="true"></span>
+              <span class="car-on" aria-hidden="true">ON</span>
+            </button>
+            <div class="car-meta">
+              <p class="car-color"><i aria-hidden="true"></i>КРАСНЫЙ</p>
+              <button class="car-key" type="button" aria-pressed="false" aria-label="Повернуть ключ: красный мопед, имя — при встрече" data-key><span class="car-key-fb">ИМЯ — ПРИ ВСТРЕЧЕ</span></button>
+              <p class="hand-note car-note">у каждого своё, честно</p>
+            </div>
+          </li>
+          <li class="car" style="--sw:#BFC2C6" data-car="2">
+            <button class="car-photo" type="button" data-lb="garage" data-full="assets/img/scooters/silver-732.webp" data-full-jpg="assets/img/scooters/silver-732.jpg" data-w="732" data-h="1093" aria-label="Открыть фото: серебристый мопед" data-cursor="СМОТРЕТЬ">
+              <picture><source type="image/webp" srcset="assets/img/scooters/silver-560.webp 560w, assets/img/scooters/silver-732.webp 732w" sizes="(min-width: 768px) 340px, 72vw"><img src="assets/img/scooters/silver-560.jpg" srcset="assets/img/scooters/silver-560.jpg 560w, assets/img/scooters/silver-732.jpg 732w" sizes="(min-width: 768px) 340px, 72vw" width="732" height="1093" alt="Серебристый ретро-мопед и девушка в соломенной шляпе" loading="lazy" decoding="async"></picture>
+              <span class="car-lamp" aria-hidden="true"></span>
+              <span class="car-on" aria-hidden="true">ON</span>
+            </button>
+            <div class="car-meta">
+              <p class="car-color"><i aria-hidden="true"></i>СЕРЕБРИСТЫЙ</p>
+              <button class="car-key" type="button" aria-pressed="false" aria-label="Повернуть ключ: серебристый мопед, имя — при встрече" data-key><span class="car-key-fb">ИМЯ — ПРИ ВСТРЕЧЕ</span></button>
+              <p class="hand-note car-note">у каждого своё, честно</p>
+            </div>
+          </li>
+          <li class="car" style="--sw:#2D4FA8" data-car="3">
+            <button class="car-photo" type="button" data-lb="garage" data-full="assets/img/scooters/blue-1100.webp" data-full-jpg="assets/img/scooters/blue-1100.jpg" data-w="1100" data-h="1467" aria-label="Открыть фото: синий мопед" data-cursor="СМОТРЕТЬ">
+              <picture><source type="image/webp" srcset="assets/img/scooters/blue-560.webp 560w, assets/img/scooters/blue-1100.webp 1100w" sizes="(min-width: 768px) 340px, 72vw"><img src="assets/img/scooters/blue-560.jpg" srcset="assets/img/scooters/blue-560.jpg 560w, assets/img/scooters/blue-1100.jpg 1100w" sizes="(min-width: 768px) 340px, 72vw" width="1100" height="1467" alt="Синий ретро-мопед на тротуаре в центре" loading="lazy" decoding="async"></picture>
+              <span class="car-lamp" aria-hidden="true"></span>
+              <span class="car-on" aria-hidden="true">ON</span>
+            </button>
+            <div class="car-meta">
+              <p class="car-color"><i aria-hidden="true"></i>СИНИЙ</p>
+              <button class="car-key" type="button" aria-pressed="false" aria-label="Повернуть ключ: синий мопед, имя — при встрече" data-key><span class="car-key-fb">ИМЯ — ПРИ ВСТРЕЧЕ</span></button>
+              <p class="hand-note car-note">у каждого своё, честно</p>
+            </div>
+          </li>
+          <li class="car" style="--sw:#F07A2A" data-car="4">
+            <button class="car-photo" type="button" data-lb="garage" data-full="assets/img/scooters/orange-1100.webp" data-full-jpg="assets/img/scooters/orange-1100.jpg" data-w="1100" data-h="1467" aria-label="Открыть фото: оранжевый мопед" data-cursor="СМОТРЕТЬ">
+              <picture><source type="image/webp" srcset="assets/img/scooters/orange-560.webp 560w, assets/img/scooters/orange-1100.webp 1100w" sizes="(min-width: 768px) 340px, 72vw"><img src="assets/img/scooters/orange-560.jpg" srcset="assets/img/scooters/orange-560.jpg 560w, assets/img/scooters/orange-1100.jpg 1100w" sizes="(min-width: 768px) 340px, 72vw" width="1100" height="1467" alt="Оранжевый ретро-мопед крупным планом" loading="lazy" decoding="async"></picture>
+              <span class="car-lamp" aria-hidden="true"></span>
+              <span class="car-on" aria-hidden="true">ON</span>
+            </button>
+            <div class="car-meta">
+              <p class="car-color"><i aria-hidden="true"></i>ОРАНЖЕВЫЙ</p>
+              <button class="car-key" type="button" aria-pressed="false" aria-label="Повернуть ключ: оранжевый мопед, имя — при встрече" data-key><span class="car-key-fb">ИМЯ — ПРИ ВСТРЕЧЕ</span></button>
+              <p class="hand-note car-note">у каждого своё, честно</p>
+            </div>
+          </li>
+          <li class="car" style="--sw:#7E2230" data-car="5">
+            <button class="car-photo" type="button" data-lb="garage" data-full="assets/img/scooters/bordo-720.webp" data-full-jpg="assets/img/scooters/bordo-720.jpg" data-w="720" data-h="960" aria-label="Открыть фото: бордовый мопед" data-cursor="СМОТРЕТЬ">
+              <picture><source type="image/webp" srcset="assets/img/scooters/bordo-560.webp 560w, assets/img/scooters/bordo-720.webp 720w" sizes="(min-width: 768px) 340px, 72vw"><img src="assets/img/scooters/bordo-560.jpg" srcset="assets/img/scooters/bordo-560.jpg 560w, assets/img/scooters/bordo-720.jpg 720w" sizes="(min-width: 768px) 340px, 72vw" width="720" height="960" alt="Бордовый ретро-мопед у стены с тропическим граффити" loading="lazy" decoding="async"></picture>
+              <span class="car-lamp" aria-hidden="true"></span>
+              <span class="car-on" aria-hidden="true">ON</span>
+            </button>
+            <div class="car-meta">
+              <p class="car-color"><i aria-hidden="true"></i>БОРДОВЫЙ</p>
+              <button class="car-key" type="button" aria-pressed="false" aria-label="Повернуть ключ: бордовый мопед, имя — при встрече" data-key><span class="car-key-fb">ИМЯ — ПРИ ВСТРЕЧЕ</span></button>
+              <p class="hand-note car-note">у каждого своё, честно</p>
+            </div>
+          </li>
+          <li class="car" style="--sw:#2E8C6E" data-car="6">
+            <button class="car-photo" type="button" data-lb="garage" data-full="assets/img/scooters/emerald-768.webp" data-full-jpg="assets/img/scooters/emerald-768.jpg" data-w="768" data-h="960" aria-label="Открыть фото: изумрудный мопед" data-cursor="СМОТРЕТЬ">
+              <picture><source type="image/webp" srcset="assets/img/scooters/emerald-560.webp 560w, assets/img/scooters/emerald-768.webp 768w" sizes="(min-width: 768px) 340px, 72vw"><img src="assets/img/scooters/emerald-560.jpg" srcset="assets/img/scooters/emerald-560.jpg 560w, assets/img/scooters/emerald-768.jpg 768w" sizes="(min-width: 768px) 340px, 72vw" width="768" height="960" alt="Изумрудный ретро-мопед в сквере" loading="lazy" decoding="async"></picture>
+              <span class="car-lamp" aria-hidden="true"></span>
+              <span class="car-on" aria-hidden="true">ON</span>
+            </button>
+            <div class="car-meta">
+              <p class="car-color"><i aria-hidden="true"></i>ИЗУМРУДНЫЙ</p>
+              <button class="car-key" type="button" aria-pressed="false" aria-label="Повернуть ключ: изумрудный мопед, имя — при встрече" data-key><span class="car-key-fb">ИМЯ — ПРИ ВСТРЕЧЕ</span></button>
+              <p class="hand-note car-note">у каждого своё, честно</p>
+            </div>
+          </li>
+<!--/@GARAGE-->
+        </ul>
+      </div>
+    </section>
+
+    <!-- 06 · Тарифы -->
+    <section class="tariffs" id="tariffs" aria-labelledby="tf-title">
+      <div class="tf-bg" aria-hidden="true">
+<!--@TFBG-->
+        <picture class="tf-bgi is-on" data-bg="0"><source type="image/webp" data-srcset="assets/img/city/t1-956.webp"><img data-src="assets/img/city/t1-956.jpg" width="956" height="1276" alt="" decoding="async"></picture>
+        <picture class="tf-bgi" data-bg="1"><source type="image/webp" data-srcset="assets/img/city/t2-960.webp"><img data-src="assets/img/city/t2-960.jpg" width="960" height="1280" alt="" decoding="async"></picture>
+        <picture class="tf-bgi" data-bg="2"><source type="image/webp" data-srcset="assets/img/city/t3-960.webp"><img data-src="assets/img/city/t3-960.jpg" width="960" height="720" alt="" decoding="async"></picture>
+        <picture class="tf-bgi" data-bg="3"><source type="image/webp" data-srcset="assets/img/city/t4-767.webp"><img data-src="assets/img/city/t4-767.jpg" width="767" height="959" alt="" decoding="async"></picture>
+        <picture class="tf-bgi" data-bg="4"><source type="image/webp" data-srcset="assets/img/city/t5-960.webp"><img data-src="assets/img/city/t5-960.jpg" width="960" height="1280" alt="" decoding="async"></picture>
+<!--/@TFBG-->
+      </div>
+      <div class="tf-stage">
+        <div class="tf-head">
+          <p class="lbl">ТАРИФЫ</p>
+          <h2 class="h2 tf-h2" id="tf-title">Сколько у&nbsp;вас <em>времени?</em></h2>
+          <ol class="tf-scale" aria-hidden="true"><li></li><li></li><li></li><li></li><li></li></ol>
+        </div>
+
+        <div class="tf-center">
+          <div class="tf-gauge" data-tf-gauge role="slider" tabindex="0" aria-label="Время аренды" aria-valuemin="0" aria-valuemax="4" aria-valuenow="0" aria-valuetext="1 час, 1 000 рублей"></div>
+          <div class="tf-chips" role="group" aria-label="Выбор времени">
+<!--@TFCHIPS-->
+            <button class="tf-chip" type="button" data-tf="0" aria-pressed="true"><b>1 Ч</b><span>1&nbsp;000&nbsp;₽</span></button>
+            <button class="tf-chip" type="button" data-tf="1" aria-pressed="false"><b>2 Ч</b><span>1&nbsp;700&nbsp;₽</span></button>
+            <button class="tf-chip" type="button" data-tf="2" aria-pressed="false"><b>3 Ч</b><span>2&nbsp;500&nbsp;₽</span></button>
+            <button class="tf-chip" type="button" data-tf="3" aria-pressed="false"><b>4 Ч</b><span>3&nbsp;200&nbsp;₽</span></button>
+            <button class="tf-chip" type="button" data-tf="4" aria-pressed="false"><b>НОЧЬ</b><span>22–10</span></button>
+<!--/@TFCHIPS-->
+          </div>
+        </div>
+
+        <div class="tf-side" aria-live="polite">
+          <p class="lbl tf-hours" data-tf-hours>1 ЧАС</p>
+          <p class="tf-mood"><span class="tf-mood-in" data-tf-mood>Попробовать и влюбиться</span></p>
+          <p class="tf-price" data-tf-price>1&nbsp;000&nbsp;₽</p>
+        </div>
+
+        <div class="tf-foot">
+          <div class="kit">
+            <p class="lbl kit-lbl">В КОМПЛЕКТЕ</p>
+            <ul class="kit-list">
+              <li><svg class="ic"><use href="#i-fuel"/></svg>ПОЛНЫЙ БАК</li>
+              <li><svg class="ic"><use href="#i-helmet"/></svg>ШЛЕМ</li>
+              <li><svg class="ic"><use href="#i-rope"/></svg>ЗАЩИТНЫЙ ТРОС</li>
+            </ul>
+          </div>
+          <p class="tf-small">Второй шлем — 300&nbsp;₽ · Доставка мопеда к&nbsp;вам — 500&nbsp;₽ в&nbsp;одну сторону · Бак возвращаете полным или доплачиваете на&nbsp;месте</p>
+          <a class="btn btn--signal" href="tel:+78432165290" data-magnetic><svg class="ic"><use href="#i-phone"/></svg><span>Забронировать по телефону</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 · Открытки — услуги -->
+    <section class="cards" id="services" aria-labelledby="cards-title">
+      <div class="wrap cards-head">
+        <p class="lbl" data-rv>УСЛУГИ</p>
+        <h2 class="h2" id="cards-title" data-split>Чем ещё заняться на&nbsp;мопеде</h2>
+      </div>
+      <div class="wrap">
+        <ul class="deck" data-deck>
+<!--@CARDS-->
+          <li class="pc" data-pc="0">
+            <article class="pc-in" aria-labelledby="pc0-t">
+              <div class="pc-photo"><picture><source type="image/webp" srcset="assets/img/clients/pc-tour-560.webp 560w, assets/img/clients/pc-tour-892.webp 892w" sizes="(min-width: 1024px) 230px, 40vw"><img src="assets/img/clients/pc-tour-560.jpg" srcset="assets/img/clients/pc-tour-560.jpg 560w, assets/img/clients/pc-tour-892.jpg 892w" sizes="(min-width: 1024px) 230px, 40vw" width="892" height="960" alt="Четверо друзей на ретро-мопедах на улице Казани" loading="lazy" decoding="async"></picture></div>
+              <div class="pc-side">
+                <div class="pc-stamp" aria-hidden="true"><img src="assets/img/logo/logo-160.webp" width="160" height="160" alt="" loading="lazy"><span>КАЗАНЬ</span></div>
+                <svg class="pc-mark" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="pcm0" d="M60 60m-40 0a40 40 0 1 1 80 0a40 40 0 1 1-80 0"/></defs><circle cx="60" cy="60" r="50"/><circle cx="60" cy="60" r="30"/><text><textPath href="#pcm0">THE SCOOTER TIME · КАЗАНЬ ·</textPath></text><text class="pc-mark-c" x="60" y="66" text-anchor="middle">ST</text><path class="pc-wave" d="M-70 44c10-6 20 6 30 0s20 6 30 0 20 6 30 0M-70 60c10-6 20 6 30 0s20 6 30 0 20 6 30 0M-70 76c10-6 20 6 30 0s20 6 30 0 20 6 30 0"/></svg>
+                <p class="pc-kind">ПОЧТОВАЯ КАРТОЧКА</p>
+                <h3 class="pc-t" id="pc0-t">Экскурсии по Казани</h3>
+                <p class="pc-text">Город с&nbsp;седла: центр, набережные, виды.</p>
+                <p class="hand-note pc-msg">Казань — с ветерком!</p>
+                <div class="pc-lines" aria-hidden="true"><i></i><i></i></div>
+                <a class="pc-link" href="tel:+78432165290">Спросить по&nbsp;телефону <svg class="ic"><use href="#i-arrow"/></svg></a>
+              </div>
+            </article>
+          </li>
+          <li class="pc" data-pc="1">
+            <article class="pc-in" aria-labelledby="pc1-t">
+              <div class="pc-photo"><picture><source type="image/webp" srcset="assets/img/clients/pc-photo-560.webp 560w, assets/img/clients/pc-photo-1100.webp 1100w" sizes="(min-width: 1024px) 230px, 40vw"><img src="assets/img/clients/pc-photo-560.jpg" srcset="assets/img/clients/pc-photo-560.jpg 560w, assets/img/clients/pc-photo-1100.jpg 1100w" sizes="(min-width: 1024px) 230px, 40vw" width="1100" height="1467" alt="Жених и невеста на красном ретро-мопеде у белого особняка" loading="lazy" decoding="async"></picture></div>
+              <div class="pc-side">
+                <div class="pc-stamp" aria-hidden="true"><img src="assets/img/logo/logo-160.webp" width="160" height="160" alt="" loading="lazy"><span>ОТ 2&nbsp;000&nbsp;₽</span></div>
+                <svg class="pc-mark" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="pcm1" d="M60 60m-40 0a40 40 0 1 1 80 0a40 40 0 1 1-80 0"/></defs><circle cx="60" cy="60" r="50"/><circle cx="60" cy="60" r="30"/><text><textPath href="#pcm1">THE SCOOTER TIME · КАЗАНЬ ·</textPath></text><text class="pc-mark-c" x="60" y="66" text-anchor="middle">ST</text><path class="pc-wave" d="M-70 44c10-6 20 6 30 0s20 6 30 0 20 6 30 0M-70 60c10-6 20 6 30 0s20 6 30 0 20 6 30 0M-70 76c10-6 20 6 30 0s20 6 30 0 20 6 30 0"/></svg>
+                <p class="pc-kind">ПОЧТОВАЯ КАРТОЧКА</p>
+                <h3 class="pc-t" id="pc1-t">Выездные фотосессии</h3>
+                <p class="pc-text">Ретро-скутер, город и&nbsp;вы в&nbsp;кадре.</p>
+                <p class="hand-note pc-msg">Улыбнитесь, вы в кадре</p>
+                <div class="pc-lines" aria-hidden="true"><i></i><i></i></div>
+                <a class="pc-link" href="tel:+78432165290">Спросить по&nbsp;телефону <svg class="ic"><use href="#i-arrow"/></svg></a>
+              </div>
+            </article>
+          </li>
+          <li class="pc" data-pc="2">
+            <article class="pc-in" aria-labelledby="pc2-t">
+              <div class="pc-photo"><picture><source type="image/webp" srcset="assets/img/clients/pc-romance-560.webp 560w, assets/img/clients/pc-romance-1100.webp 1100w" sizes="(min-width: 1024px) 230px, 40vw"><img src="assets/img/clients/pc-romance-560.jpg" srcset="assets/img/clients/pc-romance-560.jpg 560w, assets/img/clients/pc-romance-1100.jpg 1100w" sizes="(min-width: 1024px) 230px, 40vw" width="1100" height="1375" alt="Пара на мятном ретро-мопеде едет по пустой улице" loading="lazy" decoding="async"></picture></div>
+              <div class="pc-side">
+                <div class="pc-stamp" aria-hidden="true"><img src="assets/img/logo/logo-160.webp" width="160" height="160" alt="" loading="lazy"><span>ВДВОЁМ</span></div>
+                <svg class="pc-mark" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="pcm2" d="M60 60m-40 0a40 40 0 1 1 80 0a40 40 0 1 1-80 0"/></defs><circle cx="60" cy="60" r="50"/><circle cx="60" cy="60" r="30"/><text><textPath href="#pcm2">THE SCOOTER TIME · КАЗАНЬ ·</textPath></text><text class="pc-mark-c" x="60" y="66" text-anchor="middle">ST</text><path class="pc-wave" d="M-70 44c10-6 20 6 30 0s20 6 30 0 20 6 30 0M-70 60c10-6 20 6 30 0s20 6 30 0 20 6 30 0M-70 76c10-6 20 6 30 0s20 6 30 0 20 6 30 0"/></svg>
+                <p class="pc-kind">ПОЧТОВАЯ КАРТОЧКА</p>
+                <h3 class="pc-t" id="pc2-t">Романтические прогулки</h3>
+                <p class="pc-text">Вдвоём, на&nbsp;одном мопеде, без спешки.</p>
+                <p class="hand-note pc-msg">Держись крепче</p>
+                <div class="pc-lines" aria-hidden="true"><i></i><i></i></div>
+                <a class="pc-link" href="tel:+78432165290">Спросить по&nbsp;телефону <svg class="ic"><use href="#i-arrow"/></svg></a>
+              </div>
+            </article>
+          </li>
+          <li class="pc" data-pc="3">
+            <article class="pc-in" aria-labelledby="pc3-t">
+              <div class="pc-photo"><picture><source type="image/webp" srcset="assets/img/clients/pc-gift-560.webp 560w, assets/img/clients/pc-gift-720.webp 720w" sizes="(min-width: 1024px) 230px, 40vw"><img src="assets/img/clients/pc-gift-560.jpg" srcset="assets/img/clients/pc-gift-560.jpg 560w, assets/img/clients/pc-gift-720.jpg 720w" sizes="(min-width: 1024px) 230px, 40vw" width="720" height="960" alt="Пара на ретро-мопеде у набережной раскинула руки" loading="lazy" decoding="async"></picture></div>
+              <div class="pc-side">
+                <div class="pc-stamp" aria-hidden="true"><img src="assets/img/logo/logo-160.webp" width="160" height="160" alt="" loading="lazy"><span>ОТ 1&nbsp;000&nbsp;₽</span></div>
+                <svg class="pc-mark" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="pcm3" d="M60 60m-40 0a40 40 0 1 1 80 0a40 40 0 1 1-80 0"/></defs><circle cx="60" cy="60" r="50"/><circle cx="60" cy="60" r="30"/><text><textPath href="#pcm3">THE SCOOTER TIME · КАЗАНЬ ·</textPath></text><text class="pc-mark-c" x="60" y="66" text-anchor="middle">ST</text><path class="pc-wave" d="M-70 44c10-6 20 6 30 0s20 6 30 0 20 6 30 0M-70 60c10-6 20 6 30 0s20 6 30 0 20 6 30 0M-70 76c10-6 20 6 30 0s20 6 30 0 20 6 30 0"/></svg>
+                <p class="pc-kind">ПОЧТОВАЯ КАРТОЧКА</p>
+                <h3 class="pc-t" id="pc3-t">Подарочные сертификаты</h3>
+                <p class="pc-text">Подарите не&nbsp;вещь — подарите время.</p>
+                <p class="hand-note pc-msg">Тебе — целый час свободы</p>
+                <div class="pc-lines" aria-hidden="true"><i></i><i></i></div>
+                <a class="pc-link" href="tel:+78432165290">Спросить по&nbsp;телефону <svg class="ic"><use href="#i-arrow"/></svg></a>
+              </div>
+            </article>
+          </li>
+<!--/@CARDS-->
+        </ul>
+        <div class="deck-ctrl">
+          <button class="round-btn" type="button" data-deck-next aria-label="Следующая открытка"><svg class="ic"><use href="#i-arrow"/></svg></button>
+          <span class="hand-note">смахните открытку</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08 · Сертификат -->
+    <section class="gift" id="gift" aria-labelledby="gift-title">
+      <div class="wrap gift-grid">
+        <div class="gift-text">
+          <p class="lbl" data-rv>ПОДАРИТЕ ВРЕМЯ</p>
+          <h2 class="h2" id="gift-title" data-split>Лучший подарок — <em>свободный час</em></h2>
+          <p data-rv>Сертификат на&nbsp;прокат ретро-скутера — на&nbsp;день рождения, годовщину или просто так. Номинал от&nbsp;1&nbsp;000&nbsp;₽.</p>
+          <div class="gift-cta" data-rv>
+            <a class="btn btn--signal" href="tel:+78432165290" data-magnetic><svg class="ic"><use href="#i-phone"/></svg><span>Заказать по телефону</span></a>
+            <a class="btn btn--ghost" href="https://vk.me/rent_scooters" target="_blank" rel="noopener"><svg class="ic"><use href="#i-vk"/></svg><span>Написать в VK</span></a>
+          </div>
+        </div>
+        <div class="till">
+          <div class="till-slot" aria-hidden="true"></div>
+          <div class="till-clip">
+            <div class="ticket" data-ticket>
+              <div class="ticket-body">
+                <div class="ticket-top">
+                  <img class="ticket-logo" src="assets/img/logo/logo-160.webp" width="160" height="160" alt="" loading="lazy">
+                  <div>
+                    <p class="ticket-kind">ПОДАРОЧНЫЙ СЕРТИФИКАТ</p>
+                    <p class="ticket-title">Свободный час</p>
+                  </div>
+                  <p class="ticket-no">№&nbsp;0001</p>
+                </div>
+                <dl class="ticket-fields">
+                  <div><dt>КОМУ</dt><dd><span class="ticket-hand">тебе</span></dd></div>
+                  <div><dt>ВРЕМЯ</dt><dd><span class="ticket-hand">целый час на ретро-мопеде</span></dd></div>
+                  <div><dt>ОТ КОГО</dt><dd><span class="ticket-hand">от меня, с любовью</span></dd></div>
+                </dl>
+                <p class="ticket-fine">ПРОКАТ РЕТРО-СКУТЕРА · КАЗАНЬ, КРЕМЛЁВСКАЯ, 21 · НОМИНАЛ ОТ 1&nbsp;000&nbsp;₽</p>
+              </div>
+              <div class="ticket-stub">
+                <p class="ticket-stub-no">№&nbsp;0001</p>
+                <p class="ticket-stub-t">THE SCOOTER TIME</p>
+                <p class="ticket-stub-h">1&nbsp;Ч</p>
+              </div>
+              <span class="ticket-foil" aria-hidden="true"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09 · Наши клиенты — плёнка -->
+    <section class="film" id="clients" aria-labelledby="film-title">
+      <div class="wrap film-head">
+        <p class="lbl" data-rv>КОНТАКТНЫЙ ЛИСТ</p>
+        <h2 class="h2" id="film-title" data-split>Наши клиенты</h2>
+        <p class="hand-note film-note" aria-hidden="true">и&nbsp;их лучшие кадры</p>
+      </div>
+<!--@FILM-->
+      <div class="strip strip--a" data-strip="1"><ul class="strip-track">
+          <li class="fr">
+            <span class="fr-top" aria-hidden="true">SCOOTER TIME 400</span>
+            <button class="fr-btn" type="button" data-lb="film" data-full="assets/img/clients/f01-1008.webp" data-full-jpg="assets/img/clients/f01-1008.jpg" data-w="1008" data-h="1344" aria-label="Открыть кадр: пара на мятном мопеде у фонаря с цветами" data-cursor="СМОТРЕТЬ"><picture><source type="image/webp" srcset="assets/img/clients/f01-440.webp 440w, assets/img/clients/f01-1008.webp 1008w" sizes="(min-width: 768px) 220px, 46vw"><img src="assets/img/clients/f01-440.jpg" srcset="assets/img/clients/f01-440.jpg 440w, assets/img/clients/f01-1008.jpg 1008w" sizes="(min-width: 768px) 220px, 46vw" width="1008" height="1344" alt="Пара на мятном мопеде у фонаря с цветами" loading="lazy" decoding="async"></picture></button>
+            
+            <span class="fr-no" aria-hidden="true"><b>12</b><b>▸ 12A</b></span>
+          </li>
+          <li class="fr">
+            <span class="fr-top" aria-hidden="true"></span>
+            <button class="fr-btn" type="button" data-lb="film" data-full="assets/img/clients/f02-1104.webp" data-full-jpg="assets/img/clients/f02-1104.jpg" data-w="1104" data-h="1472" aria-label="Открыть кадр: пара на красном мопеде на улице в центре" data-cursor="СМОТРЕТЬ"><picture><source type="image/webp" srcset="assets/img/clients/f02-440.webp 440w, assets/img/clients/f02-1104.webp 1104w" sizes="(min-width: 768px) 220px, 46vw"><img src="assets/img/clients/f02-440.jpg" srcset="assets/img/clients/f02-440.jpg 440w, assets/img/clients/f02-1104.jpg 1104w" sizes="(min-width: 768px) 220px, 46vw" width="1104" height="1472" alt="Пара на красном мопеде на улице в центре" loading="lazy" decoding="async"></picture></button>
+            
+            <span class="fr-no" aria-hidden="true"><b>13</b><b>▸ 13A</b></span>
+          </li>
+          <li class="fr">
+            <span class="fr-top" aria-hidden="true"></span>
+            <button class="fr-btn" type="button" data-lb="film" data-full="assets/img/clients/f03-1104.webp" data-full-jpg="assets/img/clients/f03-1104.jpg" data-w="1104" data-h="1472" aria-label="Открыть кадр: друзья на красном и серебристом мопедах у кафе" data-cursor="СМОТРЕТЬ"><picture><source type="image/webp" srcset="assets/img/clients/f03-440.webp 440w, assets/img/clients/f03-1104.webp 1104w" sizes="(min-width: 768px) 220px, 46vw"><img src="assets/img/clients/f03-440.jpg" srcset="assets/img/clients/f03-440.jpg 440w, assets/img/clients/f03-1104.jpg 1104w" sizes="(min-width: 768px) 220px, 46vw" width="1104" height="1472" alt="Друзья на красном и серебристом мопедах у кафе" loading="lazy" decoding="async"></picture></button>
+            
+            <span class="fr-no" aria-hidden="true"><b>14</b><b>▸ 14A</b></span>
+          </li>
+          <li class="fr">
+            <span class="fr-top" aria-hidden="true">SCOOTER TIME 400</span>
+            <button class="fr-btn" type="button" data-lb="film" data-full="assets/img/clients/f04-1200.webp" data-full-jpg="assets/img/clients/f04-1200.jpg" data-w="1200" data-h="1200" aria-label="Открыть кадр: двое в шлемах на серебристом и красном мопедах" data-cursor="СМОТРЕТЬ"><picture><source type="image/webp" srcset="assets/img/clients/f04-440.webp 440w, assets/img/clients/f04-1200.webp 1200w" sizes="(min-width: 768px) 220px, 46vw"><img src="assets/img/clients/f04-440.jpg" srcset="assets/img/clients/f04-440.jpg 440w, assets/img/clients/f04-1200.jpg 1200w" sizes="(min-width: 768px) 220px, 46vw" width="1200" height="1200" alt="Двое в шлемах на серебристом и красном мопедах" loading="lazy" decoding="async"></picture></button>
+            <svg class="fr-mark" viewBox="0 0 200 260" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M108 14C52 10 14 52 12 118c-2 70 34 126 96 128 58 2 84-52 82-116C188 66 156 18 96 20 70 22 50 34 40 46"/></svg><span class="hand-note fr-note" aria-hidden="true">этот!</span>
+            <span class="fr-no" aria-hidden="true"><b>15</b><b>▸ 15A</b></span>
+          </li>
+          <li class="fr">
+            <span class="fr-top" aria-hidden="true"></span>
+            <button class="fr-btn" type="button" data-lb="film" data-full="assets/img/clients/f05-1178.webp" data-full-jpg="assets/img/clients/f05-1178.jpg" data-w="1178" data-h="1472" aria-label="Открыть кадр: парень на серебристом мопеде на улице" data-cursor="СМОТРЕТЬ"><picture><source type="image/webp" srcset="assets/img/clients/f05-440.webp 440w, assets/img/clients/f05-1178.webp 1178w" sizes="(min-width: 768px) 220px, 46vw"><img src="assets/img/clients/f05-440.jpg" srcset="assets/img/clients/f05-440.jpg 440w, assets/img/clients/f05-1178.jpg 1178w" sizes="(min-width: 768px) 220px, 46vw" width="1178" height="1472" alt="Парень на серебристом мопеде на улице" loading="lazy" decoding="async"></picture></button>
+            
+            <span class="fr-no" aria-hidden="true"><b>16</b><b>▸ 16A</b></span>
+          </li>
+          <li class="fr">
+            <span class="fr-top" aria-hidden="true"></span>
+            <button class="fr-btn" type="button" data-lb="film" data-full="assets/img/clients/f06-1104.webp" data-full-jpg="assets/img/clients/f06-1104.jpg" data-w="1104" data-h="1472" aria-label="Открыть кадр: двое на красном и серебристом мопедах" data-cursor="СМОТРЕТЬ"><picture><source type="image/webp" srcset="assets/img/clients/f06-440.webp 440w, assets/img/clients/f06-1104.webp 1104w" sizes="(min-width: 768px) 220px, 46vw"><img src="assets/img/clients/f06-440.jpg" srcset="assets/img/clients/f06-440.jpg 440w, assets/img/clients/f06-1104.jpg 1104w" sizes="(min-width: 768px) 220px, 46vw" width="1104" height="1472" alt="Двое на красном и серебристом мопедах" loading="lazy" decoding="async"></picture></button>
+            
+            <span class="fr-no" aria-hidden="true"><b>17</b><b>▸ 17A</b></span>
+          </li>
+          <li class="fr">
+            <span class="fr-top" aria-hidden="true">SCOOTER TIME 400</span>
+            <button class="fr-btn" type="button" data-lb="film" data-full="assets/img/clients/f07-720.webp" data-full-jpg="assets/img/clients/f07-720.jpg" data-w="720" data-h="960" aria-label="Открыть кадр: двое у изумрудного и красного мопедов" data-cursor="СМОТРЕТЬ"><picture><source type="image/webp" srcset="assets/img/clients/f07-440.webp 440w, assets/img/clients/f07-720.webp 720w" sizes="(min-width: 768px) 220px, 46vw"><img src="assets/img/clients/f07-440.jpg" srcset="assets/img/clients/f07-440.jpg 440w, assets/img/clients/f07-720.jpg 720w" sizes="(min-width: 768px) 220px, 46vw" width="720" height="960" alt="Двое у изумрудного и красного мопедов" loading="lazy" decoding="async"></picture></button>
+            
+            <span class="fr-no" aria-hidden="true"><b>18</b><b>▸ 18A</b></span>
+          </li>
+          <li class="fr">
+            <span class="fr-top" aria-hidden="true"></span>
+            <button class="fr-btn" type="button" data-lb="film" data-full="assets/img/clients/f08-540.webp" data-full-jpg="assets/img/clients/f08-540.jpg" data-w="540" data-h="720" aria-label="Открыть кадр: двое на мятном мопеде у кафе" data-cursor="СМОТРЕТЬ"><picture><source type="image/webp" srcset="assets/img/clients/f08-440.webp 440w, assets/img/clients/f08-540.webp 540w" sizes="(min-width: 768px) 220px, 46vw"><img src="assets/img/clients/f08-440.jpg" srcset="assets/img/clients/f08-440.jpg 440w, assets/img/clients/f08-540.jpg 540w" sizes="(min-width: 768px) 220px, 46vw" width="540" height="720" alt="Двое на мятном мопеде у кафе" loading="lazy" decoding="async"></picture></button>
+            
+            <span class="fr-no" aria-hidden="true"><b>19</b><b>▸ 19A</b></span>
+          </li>
+      </ul></div>
+      <div class="strip strip--b" data-strip="-1"><ul class="strip-track">
+          <li class="fr">
+            <span class="fr-top" aria-hidden="true"></span>
+            <button class="fr-btn" type="button" data-lb="film" data-full="assets/img/clients/f09-1200.webp" data-full-jpg="assets/img/clients/f09-1200.jpg" data-w="1200" data-h="1600" aria-label="Открыть кадр: пара у красного мопеда в парке" data-cursor="СМОТРЕТЬ"><picture><source type="image/webp" srcset="assets/img/clients/f09-440.webp 440w, assets/img/clients/f09-1200.webp 1200w" sizes="(min-width: 768px) 220px, 46vw"><img src="assets/img/clients/f09-440.jpg" srcset="assets/img/clients/f09-440.jpg 440w, assets/img/clients/f09-1200.jpg 1200w" sizes="(min-width: 768px) 220px, 46vw" width="1200" height="1600" alt="Пара у красного мопеда в парке" loading="lazy" decoding="async"></picture></button>
+            <svg class="fr-mark" viewBox="0 0 200 260" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M108 14C52 10 14 52 12 118c-2 70 34 126 96 128 58 2 84-52 82-116C188 66 156 18 96 20 70 22 50 34 40 46"/></svg><span class="hand-note fr-note" aria-hidden="true">лучший кадр</span>
+            <span class="fr-no" aria-hidden="true"><b>20</b><b>▸ 20A</b></span>
+          </li>
+          <li class="fr">
+            <span class="fr-top" aria-hidden="true">SCOOTER TIME 400</span>
+            <button class="fr-btn" type="button" data-lb="film" data-full="assets/img/clients/f10-960.webp" data-full-jpg="assets/img/clients/f10-960.jpg" data-w="960" data-h="1280" aria-label="Открыть кадр: пара на серебристом мопеде в парке" data-cursor="СМОТРЕТЬ"><picture><source type="image/webp" srcset="assets/img/clients/f10-440.webp 440w, assets/img/clients/f10-960.webp 960w" sizes="(min-width: 768px) 220px, 46vw"><img src="assets/img/clients/f10-440.jpg" srcset="assets/img/clients/f10-440.jpg 440w, assets/img/clients/f10-960.jpg 960w" sizes="(min-width: 768px) 220px, 46vw" width="960" height="1280" alt="Пара на серебристом мопеде в парке" loading="lazy" decoding="async"></picture></button>
+            
+            <span class="fr-no" aria-hidden="true"><b>21</b><b>▸ 21A</b></span>
+          </li>
+          <li class="fr">
+            <span class="fr-top" aria-hidden="true"></span>
+            <button class="fr-btn" type="button" data-lb="film" data-full="assets/img/clients/f11-960.webp" data-full-jpg="assets/img/clients/f11-960.jpg" data-w="960" data-h="1280" aria-label="Открыть кадр: пара на изумрудном мопеде в парке" data-cursor="СМОТРЕТЬ"><picture><source type="image/webp" srcset="assets/img/clients/f11-440.webp 440w, assets/img/clients/f11-960.webp 960w" sizes="(min-width: 768px) 220px, 46vw"><img src="assets/img/clients/f11-440.jpg" srcset="assets/img/clients/f11-440.jpg 440w, assets/img/clients/f11-960.jpg 960w" sizes="(min-width: 768px) 220px, 46vw" width="960" height="1280" alt="Пара на изумрудном мопеде в парке" loading="lazy" decoding="async"></picture></button>
+            
+            <span class="fr-no" aria-hidden="true"><b>22</b><b>▸ 22A</b></span>
+          </li>
+          <li class="fr">
+            <span class="fr-top" aria-hidden="true"></span>
+            <button class="fr-btn" type="button" data-lb="film" data-full="assets/img/clients/f12-960.webp" data-full-jpg="assets/img/clients/f12-960.jpg" data-w="960" data-h="1280" aria-label="Открыть кадр: двое на красном мопеде в парке" data-cursor="СМОТРЕТЬ"><picture><source type="image/webp" srcset="assets/img/clients/f12-440.webp 440w, assets/img/clients/f12-960.webp 960w" sizes="(min-width: 768px) 220px, 46vw"><img src="assets/img/clients/f12-440.jpg" srcset="assets/img/clients/f12-440.jpg 440w, assets/img/clients/f12-960.jpg 960w" sizes="(min-width: 768px) 220px, 46vw" width="960" height="1280" alt="Двое на красном мопеде в парке" loading="lazy" decoding="async"></picture></button>
+            
+            <span class="fr-no" aria-hidden="true"><b>23</b><b>▸ 23A</b></span>
+          </li>
+          <li class="fr">
+            <span class="fr-top" aria-hidden="true">SCOOTER TIME 400</span>
+            <button class="fr-btn" type="button" data-lb="film" data-full="assets/img/clients/f13-960.webp" data-full-jpg="assets/img/clients/f13-960.jpg" data-w="960" data-h="1280" aria-label="Открыть кадр: парень на красном мопеде с включённой фарой" data-cursor="СМОТРЕТЬ"><picture><source type="image/webp" srcset="assets/img/clients/f13-440.webp 440w, assets/img/clients/f13-960.webp 960w" sizes="(min-width: 768px) 220px, 46vw"><img src="assets/img/clients/f13-440.jpg" srcset="assets/img/clients/f13-440.jpg 440w, assets/img/clients/f13-960.jpg 960w" sizes="(min-width: 768px) 220px, 46vw" width="960" height="1280" alt="Парень на красном мопеде с включённой фарой" loading="lazy" decoding="async"></picture></button>
+            <svg class="fr-mark" viewBox="0 0 200 260" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M176 232C150 196 128 170 96 150M96 150l6 26M96 150l26-2"/></svg><span class="hand-note fr-note" aria-hidden="true">фара горит</span>
+            <span class="fr-no" aria-hidden="true"><b>24</b><b>▸ 24A</b></span>
+          </li>
+          <li class="fr">
+            <span class="fr-top" aria-hidden="true"></span>
+            <button class="fr-btn" type="button" data-lb="film" data-full="assets/img/clients/f14-720.webp" data-full-jpg="assets/img/clients/f14-720.jpg" data-w="720" data-h="960" aria-label="Открыть кадр: девушка на бордовом мопеде у граффити" data-cursor="СМОТРЕТЬ"><picture><source type="image/webp" srcset="assets/img/clients/f14-440.webp 440w, assets/img/clients/f14-720.webp 720w" sizes="(min-width: 768px) 220px, 46vw"><img src="assets/img/clients/f14-440.jpg" srcset="assets/img/clients/f14-440.jpg 440w, assets/img/clients/f14-720.jpg 720w" sizes="(min-width: 768px) 220px, 46vw" width="720" height="960" alt="Девушка на бордовом мопеде у граффити" loading="lazy" decoding="async"></picture></button>
+            
+            <span class="fr-no" aria-hidden="true"><b>25</b><b>▸ 25A</b></span>
+          </li>
+          <li class="fr">
+            <span class="fr-top" aria-hidden="true"></span>
+            <button class="fr-btn" type="button" data-lb="film" data-full="assets/img/clients/f15-960.webp" data-full-jpg="assets/img/clients/f15-960.jpg" data-w="960" data-h="720" aria-label="Открыть кадр: парень на бордовом мопеде у бирюзовой стены" data-cursor="СМОТРЕТЬ"><picture><source type="image/webp" srcset="assets/img/clients/f15-440.webp 440w, assets/img/clients/f15-960.webp 960w" sizes="(min-width: 768px) 220px, 46vw"><img src="assets/img/clients/f15-440.jpg" srcset="assets/img/clients/f15-440.jpg 440w, assets/img/clients/f15-960.jpg 960w" sizes="(min-width: 768px) 220px, 46vw" width="960" height="720" alt="Парень на бордовом мопеде у бирюзовой стены" loading="lazy" decoding="async"></picture></button>
+            
+            <span class="fr-no" aria-hidden="true"><b>26</b><b>▸ 26A</b></span>
+          </li>
+          <li class="fr">
+            <span class="fr-top" aria-hidden="true">SCOOTER TIME 400</span>
+            <button class="fr-btn" type="button" data-lb="film" data-full="assets/img/clients/f16-768.webp" data-full-jpg="assets/img/clients/f16-768.jpg" data-w="768" data-h="960" aria-label="Открыть кадр: двое на изумрудном мопеде в парке" data-cursor="СМОТРЕТЬ"><picture><source type="image/webp" srcset="assets/img/clients/f16-440.webp 440w, assets/img/clients/f16-768.webp 768w" sizes="(min-width: 768px) 220px, 46vw"><img src="assets/img/clients/f16-440.jpg" srcset="assets/img/clients/f16-440.jpg 440w, assets/img/clients/f16-768.jpg 768w" sizes="(min-width: 768px) 220px, 46vw" width="768" height="960" alt="Двое на изумрудном мопеде в парке" loading="lazy" decoding="async"></picture></button>
+            <svg class="fr-mark" viewBox="0 0 200 260" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M108 14C52 10 14 52 12 118c-2 70 34 126 96 128 58 2 84-52 82-116C188 66 156 18 96 20 70 22 50 34 40 46"/></svg><span class="hand-note fr-note" aria-hidden="true">в рамку!</span>
+            <span class="fr-no" aria-hidden="true"><b>27</b><b>▸ 27A</b></span>
+          </li>
+      </ul></div>
+<!--/@FILM-->
+      <div class="wrap film-more">
+        <a class="link-arrow" href="https://vk.ru/albums-29408051" target="_blank" rel="noopener">Больше кадров в&nbsp;нашем VK <svg class="ic"><use href="#i-arrow"/></svg></a>
+      </div>
+    </section>
+
+    <!-- 10 · Радио — отзывы -->
+    <section class="radio-sec" aria-labelledby="radio-title">
+      <div class="wrap">
+        <p class="lbl" data-rv>ОТЗЫВЫ</p>
+        <h2 class="h2" id="radio-title" data-split>Радио «После&nbsp;поездки»</h2>
+      </div>
+      <div class="wrap radio-grid">
+        <div class="radio" data-radio>
+          <div class="radio-top">
+            <div class="radio-grille" aria-hidden="true"></div>
+            <div class="radio-side">
+              <span class="radio-lamp" aria-hidden="true"></span>
+              <p class="radio-brand" aria-hidden="true">THE SCOOTER TIME<br>РАДИО</p>
+              <div class="knob" role="slider" tabindex="0" aria-label="Ручка настройки: выбор отзыва" aria-valuemin="0" aria-valuemax="100" aria-valuenow="20" aria-valuetext="Маша" data-knob><span class="knob-in"></span></div>
+            </div>
+          </div>
+          <div class="dial-win">
+            <div class="dial-scale" data-dial>
+              <span class="dial-nums" aria-hidden="true"><i>88</i><i>92</i><i>96</i><i>100</i><i>104</i><i>108</i></span>
+              <span class="dial-ptr" aria-hidden="true"></span>
+            </div>
+            <div class="stations" role="group" aria-label="Станции">
+              <button type="button" class="station" data-station="0" style="--x:.18">МАША</button>
+              <button type="button" class="station" data-station="1" style="--x:.5">DAVID</button>
+              <button type="button" class="station" data-station="2" style="--x:.82">ГОСТЬ</button>
+            </div>
+          </div>
+        </div>
+        <div class="air" aria-live="polite">
+          <p class="lbl air-lbl"><span class="air-dot" aria-hidden="true"></span>В ЭФИРЕ</p>
+          <canvas class="air-noise" width="160" height="90" aria-hidden="true"></canvas>
+          <blockquote class="air-q">
+            <p data-air-text>Были в&nbsp;Казани проездом, арендовали, покатались — всё очень понравилось.</p>
+            <cite class="lbl" data-air-name>МАША</cite>
+          </blockquote>
+          <ul class="visually-hidden reviews-plain">
+            <li>«Были в Казани проездом, арендовали, покатались — всё очень понравилось». Маша</li>
+            <li>«Спасибо за незабываемые ощущения, всё очень понравилось, надеюсь, прокачусь как-нибудь ещё». David</li>
+            <li>«Очень понравилось!» Гость</li>
+          </ul>
+          <a class="link-arrow air-more" href="https://yandex.ru/maps/org/the_scooter_time/241988291495/reviews/" target="_blank" rel="noopener">Ещё впечатления — в&nbsp;отзывах на&nbsp;Яндекс Картах <svg class="ic"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11 · Техпаспорт поездки -->
+    <section class="passport-sec" aria-labelledby="pass-title">
+      <div class="wrap">
+        <div class="passport" data-passport>
+          <img class="passport-wm" src="assets/img/logo/logo-320.webp" width="320" height="320" alt="" loading="lazy">
+          <header class="passport-head">
+            <p class="lbl">ЧТО ВАЖНО ЗНАТЬ</p>
+            <h2 class="passport-title" id="pass-title">Техпаспорт поездки</h2>
+            <p class="passport-no lbl">БЛАНК № 0001 · THE SCOOTER TIME</p>
+          </header>
+          <dl class="passport-rows">
+            <div><dt>БАК</dt><dd data-type>выдаём полным; возвращаете полным или доплачиваете на&nbsp;месте</dd></div>
+            <div><dt>В КОМПЛЕКТЕ</dt><dd data-type>шлем и&nbsp;защитный трос</dd></div>
+            <div><dt>ВТОРОЙ ШЛЕМ</dt><dd data-type>300&nbsp;₽</dd></div>
+            <div><dt>ДОСТАВКА МОПЕДА</dt><dd data-type>500&nbsp;₽ в&nbsp;одну сторону</dd></div>
+            <div><dt>НОЧНАЯ АРЕНДА</dt><dd data-type>22:00–10:00, по&nbsp;договорённости</dd></div>
+            <div><dt>ДОКУМЕНТЫ И УСЛОВИЯ</dt><dd data-type>подскажем по&nbsp;телефону за&nbsp;минуту</dd></div>
+          </dl>
+          <svg class="seal" viewBox="0 0 200 200" aria-hidden="true">
+            <defs><path id="seal-c" d="M100 100m-72 0a72 72 0 1 1 144 0a72 72 0 1 1-144 0"/></defs>
+            <circle cx="100" cy="100" r="92" fill="none" stroke-width="4"/>
+            <circle cx="100" cy="100" r="56" fill="none" stroke-width="2.5"/>
+            <text class="seal-ring"><textPath href="#seal-c">THE SCOOTER TIME · КАЗАНЬ · КРЕМЛЁВСКАЯ, 21 ·</textPath></text>
+            <text class="seal-t" x="100" y="108" text-anchor="middle">ПРОВЕРЕНО</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12 · Точка старта -->
+    <section class="find" id="find" aria-labelledby="find-title">
+      <div class="wrap find-grid">
+        <div class="find-info">
+          <p class="lbl" data-rv>ТОЧКА СТАРТА</p>
+          <h2 class="h2" id="find-title" data-split>Старт — на&nbsp;Кремлёвской</h2>
+          <p class="find-addr" data-rv>Кремлёвская улица, 21, Казань</p>
+          <ul class="find-list" data-rv>
+            <li><svg class="ic"><use href="#i-metro"/></svg><span>Метро «Кремлёвская» — 750&nbsp;м</span></li>
+            <li><svg class="ic"><use href="#i-bus"/></svg><span>Остановки «КАИ», «Университет» — 640&nbsp;м</span></li>
+            <li><svg class="ic"><use href="#i-clock"/></svg><span>Ежедневно 10:00–00:00 · <b class="find-status" data-status-long></b></span></li>
+            <li><svg class="ic"><use href="#i-card"/></svg><span>Можно оплатить картой</span></li>
+          </ul>
+          <div class="find-phones" data-rv>
+            <a href="tel:+78432165290">+7 (843) 216-52-90</a>
+            <a href="tel:+79625565290">+7 (962) 556-52-90</a>
+          </div>
+          <div class="find-cta" data-rv>
+            <a class="btn btn--signal" href="https://yandex.ru/maps/org/the_scooter_time/241988291495/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-route"/></svg><span>Построить маршрут</span></a>
+            <a class="btn btn--ghost" href="https://vk.me/rent_scooters" target="_blank" rel="noopener"><svg class="ic"><use href="#i-vk"/></svg><span>Написать в VK</span></a>
+          </div>
+        </div>
+        <div class="map" data-rv>
+<!--@MAP-->
+<svg class="map-svg" viewBox="0 0 900 620" role="img" aria-labelledby="map-title" preserveAspectRatio="xMidYMid slice">
+  <title id="map-title">Схема: The Scooter Time на Кремлёвской улице, 21; метро «Кремлёвская» — 750 метров по Кремлёвской</title>
+  <defs><clipPath id="map-clip"><rect width="900" height="620"/></clipPath></defs>
+  <g clip-path="url(#map-clip)">
+    <g class="map-water"><path d="M500.2,217.3L492.4,244.5L563.7,264.6L570.6,240.4L563.1,238.2L563.7,236.3L557.1,234.5L557.4,233.4L500.2,217.3"/><path d="M290.1,110.5L287.4,111.7L291.2,119.6L293.9,118.4L290.1,110.5"/><path d="M794.6,309.8L795.6,309.8L795.6,309.4L795.8,309L796.1,308.6L796.4,308.3L796.8,308L797.3,307.8L797.7,307.7L798.2,307.7L798.7,307.8L799.1,308L799.5,308.3L799.9,308.6L800.1,309L800.3,309.5L800.4,309.8L801.2,309.8L801.2,310.4L801.7,310.5L802.2,310.7L802.6,311L802.9,311.3L803.2,311.7L803.4,312.1L803.5,312.6L803.5,313.1L803.4,313.5L803.2,314L802.9,314.4L802.6,314.7L802.2,315L801.7,315.2L801.2,315.3L801.2,315.9L800.4,315.9L800.3,316.3L800.2,316.7L799.9,317.1L799.5,317.4L799.1,317.7L798.7,317.9L798.2,318L797.8,318L797.3,317.9L796.9,317.7L796.5,317.4L796.1,317.1L795.9,316.7L795.7,316.3L795.6,315.9L794.6,315.9L794.6,315.2L794.3,315.2L793.8,315.1L793.4,314.9L793,314.6L792.7,314.3L792.4,313.9L792.2,313.5L792.1,313L792.1,312.6L792.2,312.1L792.4,311.7L792.6,311.3L793,310.9L793.4,310.7L793.8,310.5L794.3,310.4L794.6,310.4L794.6,309.8"/><path d="M856.6,275L858.4,275.4L858.9,277.1L857.7,278.4L855.9,278L855.4,276.3L856.6,275"/></g>
+    <g class="map-minor"><path d="M533.3,207.7L533.9,203.5L537.8,172.8L541.4,148.4L542.4,141.2L543,136.5L543.5,132.8"/><path d="M658.7,309.3L654.4,315.5L647.1,325.7L645,328.6L619.9,364.1L608.2,379.9L606.2,382.6L605.5,383.6"/><path d="M690.6,444.6L686.1,450.2L650.8,494.4L626.9,524.5L624.6,527.3L620.6,532.4L617.9,535.5L614.7,539.6L590.6,570.4L583.7,579.2"/><path d="M472.4,724.4L470.2,727.5L448.9,755.2"/><path d="M779.3,97.5L778.7,103.3L777.9,110.7L775.3,129.4L772.6,147.6L771.4,157L770.8,161.8L770.6,166.5"/><path d="M389.9,350.9L362.1,331.4"/><path d="M1002.3,485.9L999.4,488.2L987.2,499.8L964.5,523L958.9,528.3L937.3,550.1L920.5,563.6L914,568.2L881.8,589.4L860.2,594.5L854.6,594"/><path d="M873.2,410.7L878,408.4L910.8,391L926.3,382.6L953.5,367.9L956.8,366.1L965.3,361.5L973.3,357.2L978.1,354.6L984.9,350.8L1001.5,342L1013.4,335.5L1015.4,334.4"/><path d="M811.8,551.4L810.6,563.2L808.1,576.4L804.4,584.9L798.3,595.3L778.9,619.7L777.1,622L761.9,641.1L758,646.1L756.4,647.9L755.1,649.8"/><path d="M-67.3,426.6L-64,424.2L-57.7,419.9L-47.6,413.2L-38.4,407L-31.1,402.2"/><path d="M273.3,769.6L268.7,765.3L263.2,760.2L261.2,758.3L250.1,748L242.5,740.9L238.6,737.2L237.7,736.4L237.1,735.9L226.7,726.1L221.3,721L218.3,718.2L213.5,713.7"/><path d="M332.4,562.5L334.7,559.4"/><path d="M1074.1,-4.6L1073.6,-2L1073,1.1L1072.7,2.8L1072.3,5.1L1068.9,24.7L1066.2,39.8L1064.1,51.6L1063.5,55L1060,74.2L1059.9,75.3L1055.6,99L1053.5,111.1L1051.4,122.7L1049.7,132.6L1049.1,135.7L1048.8,137.5L1048.3,140.2"/><path d="M756.6,732.5L750.7,726.8L745.3,722.6"/><path d="M100.7,527.7L112.5,505.8L121,488.3L125.5,480.5L126.4,479.9L136.6,470.1L141.5,465.5L144.6,462.4L145.7,461.5L149.1,458.2L153.5,455.3"/><path d="M406.2,542.9L423.3,557.2L427.7,560.9L438.8,570.4"/><path d="M549.6,276.5L531.6,305.5L522.4,318.9L520.7,321.3"/><path d="M425.3,442.4L419.9,449.5"/><path d="M305.6,172.9L322.1,183.9L337.8,193.6"/><path d="M405.2,647.4L401.5,652.1L383.5,676.2L364.2,701.9L344.2,728.4L341.5,732.1"/><path d="M669.1,765.7L667.2,768.1L658.9,779L631.2,814.8L627.5,819.6L611.7,839.6L608.2,843.2"/><path d="M755.1,649.8L754,651.2L753,652.4L750.1,656.3L718.1,698.2"/><path d="M1165.2,581.4L1160.3,583.7L1145.9,594.5L1133.4,605.8L1129,608.7L1123.4,612.3L1121,613.2L1102.3,620.2L1090.8,624.5L1073.4,631L1042.1,642.8L1040.7,643.3L1031.3,647L1012,654.4L995.5,660.8L968.6,669.5L947,676.5L942.8,677.2L937.3,677.2L935.3,677.2L921.6,677.2"/><path d="M541.7,469.6L545.2,464.9L574.8,425.4L577.8,421.4"/><path d="M508.6,513L487.2,541"/><path d="M534.6,476.3L517.1,500.9"/><path d="M549.6,276.5L616.6,296.7L658.7,309.3"/><path d="M658.7,309.3L663,310.6L728.6,330.6L743.8,335.2"/><path d="M448.7,418.1L432.2,437.9L425.3,442.4"/><path d="M459.2,246.9L460.5,247.8L462.5,249.1L484.8,256.2L507.8,263.4L547.3,275.8L549.6,276.5"/><path d="M520.7,321.3L515.1,328.3L507.1,338.8L493.9,356.3L492.2,358.5L478.7,375.2L470.4,385.5L468.9,387.2L459.8,398.4L458.8,399.7L457.6,401.3"/><path d="M577.8,421.4L574.8,419.1L562,409.6L545.5,397.2L527.1,383.6L517.8,376.6"/><path d="M225.4,211L219.3,200L188.5,145.5L169.8,113.3L141.4,64.1L129.1,36.8"/><path d="M849.1,178.7L850.4,171.6L851.2,168L851.7,166.2L860.4,118.6L861,115.7L864.5,108.8"/><path d="M559.2,3.1L563,3.4L564.7,3.6L589.4,6.9L593.1,7.4L599.5,8.3L616.4,10.6"/><path d="M481.2,548.9L479.2,551.4L469.2,564.4L457.3,579.8L453.9,584.2"/><path d="M724.5,2.8L714.2,8.6L712.5,10L710,12L705.8,25.7L703.5,33.2"/><path d="M679.9,155.2L679,159.1L678.2,162.4L676.3,170.6L670.7,193.7L669.8,197.5L666.8,210.4L663.5,224.1L660.7,236.3L659.8,239.7"/><path d="M1074.1,-4.6L1070.8,-5.2L1044.6,-9.8L1039,-10.8L1012.2,-16L1004.7,-18"/><path d="M983.1,129L983.6,124.8L985.3,112L985.5,110.4L986.9,100.2L988,92.3L990.7,72.3L990.8,71.2L991.1,69.3L992.7,57.2L995.1,39.8L995.4,37.5L996.7,28.2L997.9,19.4L1000,3.4L1002,-11.7L1004.7,-18"/><path d="M1002.3,485.9L1001.6,491L963.7,535.2L958.2,544.8L953.5,555.2L952.8,559.7L951.9,565.7L951.2,594L947.9,610.6L947,615.6L944.7,627.1L937.8,647.3L937.8,660L937.3,663.1L936.8,665.9L935.8,668.2L934.8,669.2L933.8,670.3L931.2,672.1L928.1,673.2L921.6,677.2"/><path d="M337.8,193.6L331.6,195.9L326.2,197.8L318.1,199.8"/><path d="M429.6,780.2L430.9,782.1L433.3,784.7L439,790.9L465.1,819L492.9,849.1L497.3,853.8L503.1,860.2L508.4,866L520.1,878.9L523.1,882.1L536.1,896.4L536.9,897.2L537.9,898.3L551.8,912.5L554,915"/><path d="M1048.3,140.2L1046.8,149.3L1046.5,151.1L1045.5,157.7L1039.3,196.5"/><path d="M783.6,-179.4L785.3,-171.8L784.9,-155L784.6,-149.2L784.1,-137.3L785.2,-127.2L785.5,-126.5L789.1,-118.1L801.7,-104L803.7,-101.7L807.8,-97.8L822,-84L833.6,-74.2"/><path d="M237.9,451.7L212.7,469.3"/><path d="M785.5,3.7L786.7,5.9L796.5,22.1L798.9,26.1L800.3,28.6L809.9,45L814.6,45.9L828.3,52.8L836.9,58.7L844.6,63.7L846.3,65.2L854.8,73.3L864,75.4L867.6,75.2L872.5,77.8"/><path d="M220,554L216,547.4L206.9,533.9"/><path d="M153.5,455.3L149,448.9L137.2,431.2L127.7,417.2L108.1,388.2L106.7,386.2L97.4,372.4"/><path d="M530.9,649.2L534.2,652.1L537.5,654.8L548.9,664.5"/><path d="M669.1,765.7L673.4,769.7L676.5,772.4L690.6,785.1"/><path d="M530.9,649.2L529.1,651.5L527.7,653.3L526.2,655.3L520.5,662.6L518.4,665.3L509.3,677.1L500.3,688.6L491.4,700.2L489.1,703.2"/><path d="M1282.3,-68L1250.5,-74.9L1241.4,-76.8L1207.3,-84L1200.4,-85.4L1187.5,-87.9L1182,-88.2L1178.2,-87.5L1173.9,-85.6L1162,-75.8L1156.4,-70.4L1138,-52.7L1122,-47.1L1096.4,-42L1089.9,-39.1L1087.3,-37.1L1084.3,-34.9L1079.3,-26.2L1076.3,-15L1074.1,-4.6"/><path d="M543.9,130L544.4,123.7L544.8,121.8L544.9,121.2L546.2,110.9L548,93.7L549.4,81.1L550,74.7L551.2,66.8L551.5,64.6"/><path d="M479.6,47.2L455.8,41L443.3,37.9L438.1,36.4L426.1,33.4L422.3,32.5L417.4,31.1L405.9,28.5L391.4,24.9L374.4,20.7L355.3,14.8L347.8,12.7L339.1,10.5L332.3,8.4"/><path d="M551.5,64.6L552.1,57.9L554.6,37.5L556.2,24.8L559.2,3.1"/><path d="M690.6,444.6L695.8,448.4L699,450.7L709,457.8L729.4,472.4L737.8,478.3L743.1,482.1L757.5,492.4L760.2,494.3L763.6,496.8L793.1,517.8"/><path d="M520.7,321.3L524.7,324.5L551.9,344.4L600.1,379.6L605.5,383.6"/><path d="M759.4,266.2L758.9,271L757.8,277.7L752.3,314.6L750.3,331.1L750,333L749.5,337"/><path d="M770.9,169.7L770.4,173.9L769.8,178.8L768.7,188.3L768,194L765.6,214.1L764.2,226.3L761.7,246.9L760.5,256.9L760.1,259.8L759.4,266.2"/><path d="M140.8,643.6L136.5,639.3L134.3,637L132.4,635.1L115.4,618.2L105.2,608L103.2,606L82.2,585L75.9,578.7L73.9,576.7L69.6,572.6"/><path d="M1015.4,334.4L1041,320.8"/><path d="M996.7,28.2L991.1,26.9L983.5,25.1L979.5,24.2L970.6,22.2L952.7,18.1L949.5,17.4L941.3,15.5L934.1,13.9L928.4,12.6"/><path d="M389.1,-30.9L398.8,-35.1L410.1,-42.6L423.1,-51.3L438.4,-56.9"/><path d="M54.7,309.2L47.5,298.8L42.2,290.9L39.2,286.3"/><path d="M341.5,732.1L337.8,726.7L326,710.2L324,707.3L310.7,687.8L307.8,683.6"/><path d="M26.1,465.4L15.3,450.2L-4.4,422.5L-14.3,402.4L-16.7,398.6L-19.4,394.3"/><path d="M349.3,541L352.1,537.7L365.5,520.5L371.5,512.7"/><path d="M-29.7,377.1L-44.3,390.2L-48.2,392.9L-73.5,410.6L-76.7,413.1"/><path d="M346.8,544.2L349.3,541"/><path d="M334.7,559.4L346.8,544.2"/><path d="M-29.7,377.1L-33.7,368.1L-37.8,361.5L-59.1,327.3L-74.1,303.4L-77,298.8"/><path d="M418.4,182.2L419.5,176.8L419.9,175.4L420.9,172.5L425.4,163.5L427.2,159.7L433,147.6L437.6,138.2L438.8,135.6L445,122.5L447.5,117.7"/><path d="M285.3,856.6L282,850.7L277.6,845.8L275.9,844.1L265.5,834L262.6,831.1L226,795L188.5,758.1L186.1,755.9L182.6,753.6L147.3,719.2L121.4,694L118.1,690.7L113.7,686L108,680.9"/><path d="M620.6,532.4L585.3,504.3L571.1,493L556,481L551.8,477.7L544.6,471.9L541.7,469.6"/><path d="M479.6,47.2L476.1,56.8L466.3,77.6L452.2,107.8L448.7,115.2"/><path d="M914,568.2L914.1,570.2L913.9,587.5L913.8,601.9"/><path d="M318.1,199.8L305.9,201L283.2,197.1L273.3,195.9L264.9,196.1L258.2,197.3L247.5,200.9L234.8,206.9L225.4,211"/><path d="M141.4,64.1L138,66L111.5,80.1L97.4,87.7L80.5,96.9"/><path d="M821.2,505.8L818,513.5L813.1,520.3"/><path d="M179,492.8L153.5,455.3"/><path d="M937.8,647.3L933.3,655.9L929.3,663.8L921.6,677.2"/><path d="M1036.5,213.1L1036,215.6L1035.5,218L1030.8,241.9L1027.6,258.1L1021.3,289.7L1016.7,312.9L1016.4,314.6L1015.7,318"/><path d="M341.6,196.2L419.3,251.6L436.9,264.1L443.2,268.2"/><path d="M1048.3,140.2L1031,137.2L1018.5,135L1015.7,134.6L1002,132.2L1001.1,132L983.1,129"/><path d="M1166.7,158.5L1156.1,156.8L1140.8,154.5L1118,151L1115.3,150.5L1101.4,148.4L1097.9,147.8L1085.7,146L1080.3,145.1L1073.9,144.2L1065.6,143L1053.3,140.9L1048.3,140.2"/><path d="M864.5,108.8L866.6,104.8L870.6,94.2L872.5,77.8"/><path d="M693,86.3L685.9,85.3L673.3,83.7L658.3,81.8L648.8,80.5L637.9,79.1L624.7,77.3L617.5,76.5L610.5,75.5L591.2,72.9L589.3,72.7L582.9,71.9L569.5,68.8L560.9,66.7L551.5,64.6"/><path d="M346.7,320.1L287.3,276.9L271.6,264.7L264.8,256.9"/><path d="M453.9,584.2L458.8,588.2L477.8,605.1"/><path d="M453.9,584.2L451.2,587.9L423.7,623.5L422.2,625.4"/><path d="M182.6,753.6L185.7,748.7L188.9,744.3L197.8,733.8L206.8,722.3L208.1,720.6L213.5,713.7L218.5,707.4L224.5,699.8L237.3,683.7L270.9,641.5L272.2,639.9L275.8,635.2L278.7,631.2L282.5,626.4L289.8,617.3"/><path d="M863.3,-24L866.1,-25L887.8,-21.7L901.4,-19.6L913.8,-17.6L933.4,-14.8"/><path d="M868.2,-14.2L863.3,-24"/><path d="M874.3,-1.5L868.2,-14.2"/><path d="M718.1,698.2L672.2,761.4L671.1,762.7L669.1,765.7"/><path d="M718.1,698.2L715.9,696.3L701.9,683.9L693.4,676.4L687.1,670.8L639.4,628.5L616.1,607.8L586.5,581.6L583.7,579.2"/><path d="M583.7,579.2L554.2,618.3L536.2,642.2L534.9,643.9L533.5,645.7L530.9,649.2"/><path d="M583.7,579.2L580.5,576.4L548.4,548.1L508.6,513L472.8,482.6L445.1,459.2L425.3,442.4L367.5,390.8L364.1,394.2L361.5,391.4L359.5,389.3L361.4,385.6L330.3,357.4L319.5,347.7L298.4,328.7L286.5,318L273.7,294L263.7,275.2L260.2,269L247.4,244.9L244.1,238.5L243.5,237.5L236.5,227.2L234.1,223.8"/><path d="M855.4,418.4L857.2,417.3L859.3,416.9L861.5,417.1L863.7,418.1L866.7,421.1"/><path d="M250.2,597.9L238.4,580.8"/><path d="M238.3,580.6L229,567.1L224.7,560.8L223.7,559.5L220,554"/><path d="M877.1,39L879.2,21.4L878.9,17L878.3,13.2L878,11.9L874.3,-1.5"/><path d="M1004.7,-18L1002.6,-21.8L993.1,-32.3L991.8,-36.4L991.1,-38.6L989.6,-57.5"/><path d="M989.6,-57.5L988.2,-81.7L987.1,-91.9L986.2,-94L984.7,-95.8L982.9,-97.5L980.1,-98.2L954,-99.8L932.5,-100.3"/><path d="M841.2,-62.2L850.4,-45.6L863.3,-24"/><path d="M294.3,158L294.3,158.2L294.4,158.3L297.9,165.9L305.6,172.9"/><path d="M834.9,804.1L818.7,789.1L795,767.1"/><path d="M117.3,835.4L127.5,823.1L128.5,821.9L129.3,820.9L145.7,800.9L147.9,798.3L149.8,795.9L160,782.8L165.8,775.4L166.9,774L167.3,773.6L170.7,769.1"/><path d="M170.7,769.1L171.8,767.7L173.1,766L174.5,764.2L177.6,760.4L179.6,757.6L181,755.8L182.6,753.6"/><path d="M511.8,508.4L508.6,513"/><path d="M517.1,500.9L511.8,508.4"/><path d="M170.7,769.1L192.9,791.8L197.6,796.7"/><path d="M99.7,689.9L101.7,695.5L103.2,697.5L104.1,698.6L140.2,737L165.8,763.9L166.4,764.5L170.7,769.1"/><path d="M830.1,284L831.5,277.6"/><path d="M743.8,335.2L747.6,336.4L749.5,337"/><path d="M225.4,211L187.4,208L171.4,205.9L163.8,203L158.4,199.2L145.1,184.1L142.7,181.4L136.4,174.2L132.4,171.3L129.7,170.5L126.7,170.4L124.6,170.8"/><path d="M43.3,489.7L20.4,505.9L2.5,518.6L-2.1,521.8"/><path d="M371.5,512.7L385.2,494.8L400.7,474.6L419.9,449.5"/><path d="M829.1,470.5L825.1,490.2"/><path d="M855.4,418.4L846,434.6L839.3,446.3L832.1,459L830.6,462.9L829.1,470.5"/><path d="M362.1,331.4L346.7,320.1"/><path d="M239,532.3L233.4,534.4L229.3,535.7L225.5,536.6L222.2,537.2L218.4,537.6L215.9,537.3L213,536.8L209.9,535.7L206.9,533.9"/><path d="M811,696L805.3,690.8L790.7,678.1L769.1,660.7L763.3,656.1L757.7,651.7L755.1,649.8"/><path d="M755.1,649.8L739.4,635.4L730.1,626L704.1,603.9"/><path d="M813.1,520.3L811.9,522L807.5,528.1"/><path d="M825.1,490.2L821.2,505.8"/><path d="M793.1,517.8L807.5,528.1"/><path d="M812,532.2L813.2,537.8L811.8,551.4"/><path d="M807.5,528.1L812,532.2"/><path d="M921.6,677.2L906.5,679.5L858.5,687L854.4,687.7L844.6,689.5"/><path d="M457.6,401.3L443.2,390.5L413.1,367.8L393.9,353.7L389.9,350.9"/><path d="M371.5,512.7L375.2,516.4L394.7,533.3"/><path d="M400.4,817.1L398.5,814.3L388.8,800.2L376.1,781.9L361.2,761.1"/><path d="M165.6,667.4L152.1,654.4L151.7,654L150.7,653.1L145.6,647.8L140.8,643.6"/><path d="M910.3,117.3L873.7,110.3L864.5,108.8"/><path d="M864.5,108.8L858.9,108.1L851.9,107L838.4,105.3L803.3,100.8L787.1,98.7L779.3,97.5"/><path d="M1015.7,318L1015.4,334.4"/><path d="M1020.6,472.5L1017.9,473.3L1015.8,475L1011.8,478.2L1002.3,485.9"/><path d="M1113.2,447.8L1086.6,454.5L1065.3,460L1060,461.2L1053,462.8L1047.2,464.7L1043.6,465.8L1020.6,472.5"/><path d="M943.3,123L921.8,119.2L910.3,117.3"/><path d="M690.6,785.1L693.5,787.6"/><path d="M640.9,742.1L643.4,744.2L662.2,760L664.5,761.9L669.1,765.7"/><path d="M613.7,719.1L616.4,721.3"/><path d="M897.8,180L898.2,176.7L899.2,171.9L908.7,124.5L909.5,120.1L910.3,117.3"/><path d="M289.8,617.3L306,596.7L320.8,578"/><path d="M320.8,578L328.6,568.1L329.4,566.7L332.4,562.5"/><path d="M429.6,780.2L423.3,788.6"/><path d="M448.9,755.2L442,764.2L432.8,776L429.6,780.2"/><path d="M504.3,627.7L524.7,644.3L526.4,645.6L530.9,649.2"/><path d="M477.8,605.1L489.1,614.7"/><path d="M438.8,570.4L451,581.7L453.9,584.2"/><path d="M394.7,533.3L406.2,542.9"/><path d="M704.1,603.9L680.3,583.6"/><path d="M680.3,583.6L655.7,562.9L629.5,540.8L625.8,537.1L624.7,536.1L623.8,535.2L620.6,532.4"/><path d="M559.2,3.1L560,-2.8L565.6,-43.9L570.3,-78.2"/><path d="M653.7,15.6L660.7,16.6L673.8,18.3L684,21.1L686.6,21.8"/><path d="M686.6,21.8L696.8,27.6L698.5,29.1L703.5,33.2"/><path d="M696.5,69.5L694.9,77.7L694.7,78.9L693,86.3"/><path d="M741.8,719.4L738.3,715.7L719.9,699.8L718.1,698.2"/><path d="M744.9,718.9L744.2,718.7L743.6,718.6L742.9,718.7L742.3,719L741.8,719.4L741.5,719.9L741.3,720.5L741.3,721.1L741.4,721.6L741.6,722.2L742,722.6L742.5,723L743.1,723.2L743.7,723.3L744.3,723.2L744.8,723L745.3,722.6L745.7,722L746,721.3L746,720.6L745.8,719.9L745.4,719.3L744.9,718.9"/><path d="M1.5,380.3L19.9,368L66.8,336.6L71.2,333.7"/><path d="M666.7,427.5L679.6,436.7"/><path d="M129.1,36.8L120.1,17L103,-29L97.4,-46.3"/><path d="M921.2,53.7L924.6,46.9L926.9,30.4L927.4,21.2L928.2,14.5L928.4,12.6"/><path d="M912.5,100.2L912.7,99.2L917.1,73.3L921.2,53.7"/><path d="M928.4,12.6L928.5,11.6L929.8,5L930.2,2.8L933.4,-14.8"/><path d="M910.3,117.3L911.5,107.7L912.5,100.2"/><path d="M206.9,533.9L205.4,531.6L204.4,530.1"/><path d="M204.4,530.1L193.3,513.8L186.3,503.5L184,500.1L179,492.8"/><path d="M256.5,607.1L252.5,601.9"/><path d="M238.4,580.8L238.3,580.6"/><path d="M264.2,618.3L256.5,607.1"/><path d="M266.1,621.2L264.2,618.3"/><path d="M286.7,649.9L280.9,641.4L275.8,635.2"/><path d="M307.8,683.6L286.7,649.9"/><path d="M361.2,761.1L355.3,752.1L354.6,751L344.7,736.7L341.5,732.1"/><path d="M57.1,487.3L43.3,489.7L26.1,465.4"/><path d="M869.1,390.8L863.5,402.6L855.4,418.4"/><path d="M1039.3,196.5L1038.2,203.7L1038,205.2L1037.3,208.7"/><path d="M382.1,-13.3L382.1,-14.2L382.3,-24.7L384.4,-29.1L389.1,-30.9"/><path d="M380.6,-6.2L381.6,-11L382.1,-13.3"/><path d="M374.4,20.7L375,17.5L380.6,-6.2"/><path d="M487.9,-75L491.7,-81.3L495.1,-90.9L510.4,-121L512.2,-123.3L514.3,-125.5"/><path d="M438.4,-56.9L455.5,-61.6L475,-66.8L487.9,-75"/><path d="M85.8,549.8L82.8,545.5L51.4,495.8L43.3,489.7"/><path d="M71.2,333.7L68.1,329L59.5,316.3"/><path d="M213.5,713.7L211.9,712.2L207.9,708.6L207.1,707.7L199.1,700L165.6,667.4"/><path d="M248.8,444.1L241.9,448.9"/><path d="M241.9,448.9L240.7,449.7L237.9,451.7"/><path d="M254.1,440.4L250.4,443L248.8,444.1"/><path d="M212.7,469.3L209.3,471.6L208.1,472.5L183.8,489.5L179,492.8"/><path d="M264.8,256.9L245.5,226.5"/><path d="M245.5,226.5L243.7,224.1L239.2,220L233.1,215.2L225.4,211"/><path d="M933.4,-14.8L933.5,-27.1L933.5,-35.7L932.8,-72.9L932.6,-97.8L932.5,-100.3"/><path d="M541.7,469.6L524.5,455.7L466.9,408.8L462.1,404.9L457.6,401.3"/><path d="M570.3,-78.2L576,-120.9L576.5,-125.2L576.8,-129.9"/><path d="M767,-28.1L773.9,-16.3L777.1,-10.7L785.5,3.7"/><path d="M717.5,-113.1L718.8,-110.8L734.9,-83.3L742.9,-69.4L765.1,-31.4L765.6,-30.3L767,-28.1"/><path d="M544.7,62.8L524.7,58.5L507.8,54.2L485.3,48.8L479.6,47.2"/><path d="M517.8,376.6L494.4,360L492.2,358.5"/><path d="M275.8,635.2L271.5,628.9L266.1,621.2"/><path d="M697.6,63.9L696.5,69.5"/><path d="M700,51.6L698.2,60.7L697.6,63.9"/><path d="M700.9,46.8L700,51.6"/><path d="M703.5,33.2L702.9,36.3L700.9,46.8"/><path d="M644.4,14.4L653.7,15.6"/><path d="M767,-28.1L747.9,-17"/><path d="M747.9,-17L725.7,-4.1L724.5,2.8"/><path d="M681.1,-83.5L691.5,-115.7"/><path d="M616.4,10.6L619.6,4.5L637.1,-15.6L666.6,-52.8L668.7,-55.5L681.1,-83.5"/><path d="M779.3,97.5L776.3,97.3L739.9,92.5L730.8,91.3L717,89.5L698.7,87.1L693,86.3"/><path d="M831.5,277.6L835.9,253.1L837.8,242.3L847.6,188L848.1,185.6L848.6,182.5"/><path d="M41.4,599.3L52.8,594.4"/><path d="M69.6,572.6L55.4,591.3L52.8,594.4"/><path d="M97.4,372.4L95.1,369L74.4,338.3L71.2,333.7"/><path d="M-31.1,402.2L-19.6,394.5L-19.4,394.3L1.5,380.3"/><path d="M543.5,132.8L543.9,130"/><path d="M898.2,186.4L897.8,180"/><path d="M872.5,77.8L877.1,39"/><path d="M39.2,286.3L25.1,265.5L18,254.9L16.6,252.9L11.6,245.2"/><path d="M59.5,316.3L54.7,309.2"/><path d="M711.3,416L695.9,437.3L692.8,441.5L690.6,444.6"/><path d="M69.6,572.6L73.2,567.6L75,565.1L78.4,560.3L85.8,549.8L91.9,541.2L95.1,536.7L100.7,527.7"/><path d="M679.6,436.7L683.5,439.6L684.6,440.4L690.6,444.6"/><path d="M252.5,601.9L250.2,597.9"/><path d="M693,86.3L691.9,92L688.3,114.5L682.3,144.7L682.1,145.6L681.9,146.6L680.7,151.8"/><path d="M680.7,151.8L679.9,155.2"/><path d="M983.1,129L946.3,123.5L943.3,123"/><path d="M551.5,64.6L544.7,62.8"/><path d="M332.3,8.4L326.2,8.6"/><path d="M848.6,182.5L849.1,178.7"/><path d="M443.2,268.2L445.8,270L448.3,271.7L515.8,318.1L520.7,321.3"/><path d="M605.5,383.6L604.4,385.1L601.5,389.1L586.8,409.1L577.8,421.4"/><path d="M605.5,383.6L609.4,386.4L666.7,427.5"/><path d="M448.7,115.2L447.5,117.7"/><path d="M770.6,166.5L770.9,169.7"/><path d="M1037.3,208.7L1036.5,213.1"/><path d="M833.6,-74.2L834.9,-72.6L836.8,-70.1L841.2,-62.2"/><path d="M616.4,10.6L633.8,12.9L638.4,13.6L644.4,14.4"/><path d="M560.1,673.9L571.2,683.2"/><path d="M574.2,685.8L577,688.1"/><path d="M571.2,683.2L574.2,685.8"/><path d="M548.9,664.5L560.1,673.9"/><path d="M577,688.1L584,694.1"/><path d="M594,702.5L613.7,719.1"/><path d="M584,694.1L590.3,699.3"/><path d="M590.3,699.3L594,702.5"/><path d="M616.4,721.3L618.6,723.2"/><path d="M618.6,723.2L637.1,738.9L640.9,742.1"/><path d="M749.5,337L748,349.9L745.5,361.4L741.8,370.3L726.6,393.3L711.3,416"/><path d="M489.1,614.7L492.2,617.4"/><path d="M492.2,617.4L504.3,627.7"/><path d="M136.4,174.2L102.4,136.7"/><path d="M337.8,193.6L341.6,196.2"/></g>
+    <g class="map-major"><path d="M63.2,735.6L63.8,740.4L65.4,744.6L70.1,754.1L88.3,785.3L114.5,830.4L117.3,835.4"/><path d="M101.3,190.3L114.6,182.8L118.2,180L121,177.5L122.9,175.3L124.1,173.1L124.6,170.8"/><path d="M818.1,702.3L825.7,708L830.5,711.6L832.9,713.5"/><path d="M418.4,182.2L425.6,183.4L452.7,189.7L454.8,190.2L467.8,192.8L471.8,193.7L479.2,195.2L487,197L491.3,197.9"/><path d="M147.5,266.4L173.2,308.4L175.6,312.3L180.9,320.9L203.8,358.3L222.5,388.7L243.2,422.5L254.1,440.4"/><path d="M41.4,599.3L35.2,580.9L21.1,555.2L-2.1,521.8"/><path d="M862.3,738L851.6,708L847.7,697.6L846.6,694.8L844.6,689.5L841.5,681.3L836.4,667.7"/><path d="M898.2,186.4L898.5,190.7"/><path d="M869.9,766.5L870.1,760.7L870.5,757.4L872.1,755.1L874.1,753.1L879.9,749.1"/><path d="M848.6,182.5L855.7,183.5L887.3,188.8L890.8,189.4L898.5,190.7"/><path d="M893.7,217.3L890,238.2L888,249.2L883.6,274.6L881.6,285.4L880.4,289.7L878.8,295.1"/><path d="M-139.1,335.8L-118.8,364.4L-72.3,430.2L-6.9,522.7L20.3,568L27.5,580.7L34,596.4"/><path d="M364.4,388L374.2,373.7L385.3,357.5L386.8,355.3L389.9,350.9"/><path d="M724.3,814.7L728,810L735.4,800.8L742.8,791.5L746.5,787.1L748.6,784.4L752.3,779.9L775.5,751"/><path d="M220,554L225.3,547.9L227.1,545.8L230.2,542.3L239,532.3"/><path d="M108,680.9L112.1,676.7L113.1,675.5L114,674.6L134.6,650.7L137.3,647.6L140.8,643.6"/><path d="M297.7,464.5L300.4,461.3"/><path d="M297.7,464.5L294.5,459.3L286.4,445.8L270.1,418.2L263.9,407.6L260.3,401.6L249.4,383.4L245.4,376.3"/><path d="M281.1,483.7L284.1,480.3"/><path d="M124.6,170.8L102.4,136.7L101,134.4"/><path d="M68.7,-61.7L64.4,1.4L60.5,64.2"/><path d="M11.6,245.2L24.2,236.7L90.7,196.5L92.3,195.5L101.3,190.3"/><path d="M573.2,802L560.8,787.4L516.3,735.2L507.1,724.3"/><path d="M472.4,724.4L474.7,727.2L509.1,767.6L515,774.5L520.4,780.9L530.7,793.2L551.6,818L566.8,836"/><path d="M489.1,703.2L485.7,707.5"/><path d="M443.2,268.2L446.1,264L454.2,253.5L459.2,246.9"/><path d="M759.4,266.2L765.8,268.6L825.4,282.8L830.1,284"/><path d="M140.8,643.6L145.2,638.6L146.9,636.7L177.1,602.5L200.4,576.2L212.6,562.3L214.8,559.8L220,554"/><path d="M329,98.3L330.6,105.4L332.9,114.3L337.4,122.9L341.5,128.3L343.6,131.1L351.9,139.1L360.5,147.4L369.8,155.8L376.4,161.7L379.8,163.8L387.2,168.3L389.5,169.7L394.9,173"/><path d="M879.9,749.1L887.4,749.6L892.6,749.9L902.6,750.9L913.5,751.1L926.4,750.1L952.7,744.4L962.8,742.1"/><path d="M469.6,680.5L463.9,673.9L440.1,646.2L426.2,630.1L422.2,625.4"/><path d="M389.9,350.9L392.9,345.9L405.7,326.9L416.5,309.9L438,276L439.8,273.3L443.2,268.2"/><path d="M99.7,689.9L93.7,697L91.2,700.8L89.4,702.6L68.9,725L64,731.1L63.3,733.3L63.2,735.6"/><path d="M485.7,707.5L474.2,722.1"/><path d="M474.2,722.1L472.4,724.4"/><path d="M284.1,480.3L294.8,467.9"/><path d="M294.8,467.9L297.7,464.5"/><path d="M459.2,246.9L489.2,206.6L491.3,197.9"/><path d="M281.1,483.7L284.3,488.1L287.2,492.4L293.8,502.2"/><path d="M768.8,742.8L723.1,797.5L715.5,807.1"/><path d="M491.3,197.9L501.5,200.2L526.7,206.2L533.3,207.7"/><path d="M533.3,207.7L578.4,218.5L611.5,227.1L645.2,235.9L655.5,238.6L659.8,239.7"/><path d="M329,98.3L344,100.7L359.3,103.2L373.1,105.4L407.3,111L441.8,116.7L447.5,117.7"/><path d="M60.8,82.1L62.2,97.6L65.3,114.8L66.8,120.3L69.9,131.8L74.4,146.4"/><path d="M75.1,77.3L73.6,70.4L72.1,63"/><path d="M66.4,-130.7L65.7,-113.8L64.8,-108L62.4,-103.3L60.1,-99.3L45.4,-84.8"/><path d="M77.4,-60.7L79.8,-99.9L79,-116.7L77.8,-133.9L72,-166.5L60.4,-216.3"/><path d="M72.1,63L75.5,18.3L84.2,-57.1L87,-82.3L87,-89L87.9,-106.3L90.4,-112.4L94.6,-117.7L98.5,-122.2L106.9,-130.3L114.1,-137L130.4,-146.9L161.1,-162.8L177,-172.2"/><path d="M194.8,-181.9L180.6,-179.8L170.8,-176.8L148.6,-167.2L133.5,-159.8L120.5,-152.5L108.9,-145.7L96,-133.3L83.2,-118.9L69,-101.1"/><path d="M45.4,-84.8L-16.7,-28.4L-23.6,-20.2"/><path d="M9.3,-35.6L29.9,-49.7L36.8,-53.5L42.3,-55.5L48.2,-55.7L53.8,-54.1L57.6,-50.6L60.3,-46L61.4,-41.9L61.5,-35.7L57.8,7.6L58.3,41L60.5,64.2"/><path d="M74.4,146.4L82.4,152.7L86.1,155L90,155.9L92.9,155.5L96,154.1L98,151.8L99.4,148.8L99.6,146L99.4,141.7L95.4,126.1"/><path d="M9.3,-35.6L35.1,-58.7L51.2,-73.9L68.3,-92.3"/><path d="M405.2,647.4L409.2,652.2L418,661.9L430.5,676.2L451.7,700.5L461.9,712.2"/><path d="M332.4,562.5L334.5,565.6L362.5,598.1L377.5,615.5L402.5,644.4L405.2,647.4"/><path d="M349.3,541L346.1,536.4L319.8,496.7"/><path d="M422.2,625.4L419.2,622L410.9,612.3L388.6,586.5"/><path d="M871.9,771.6L869.9,766.5L864.6,747.6L862.3,738"/><path d="M832.9,713.5L845.7,734.1L847.7,737.5L853.8,748.4L855.9,752.1L867.8,767.8L871.9,771.6"/><path d="M-23.6,-20.2L-42.5,-6L-45.8,-3.6L-59,5.9L-81.1,21.1"/><path d="M69,-101.1L58,-88.7L43.2,-73.3L16.2,-48.2L-4.2,-31.8L-23.6,-20.2"/><path d="M68.3,-92.3L93.9,-123.3L102.6,-133.2L113.1,-141.7L123.6,-148.9L147.1,-161.1L163.8,-167.8L177,-172.2"/><path d="M72.1,63L70.6,43.4L70.5,29.9L71.9,6.7L77.4,-60.7"/><path d="M74.4,146.4L74.8,147.3L83.9,165.3L87.6,171.1L94.1,180.5L97.9,186"/><path d="M101,134.4L95.4,126.1L87.2,113.4L80.5,96.9L77.6,86.4L75.1,77.3"/><path d="M34,596.4L34.8,599L38.6,610.5L41.1,618.6L43.3,624.5L44.7,626.9L49.2,631.5L51.6,634.1L67.5,650L91.8,673.5L94,675.6L96.6,678.8L98.6,682.7L99.4,686.6L99.7,689.9"/><path d="M862.3,738L875.4,747.1L879.9,749.1"/><path d="M-133.1,333.7L-123.4,327.3L-95.9,310.2L-77,298.8L-18.2,263.5"/><path d="M134.4,188.1L129.8,186.5L123.3,186.6L118.8,188.3L114.6,191.8L112.3,195.9L109.9,200.9"/><path d="M124.6,170.8L122.4,171.7L120.3,172.7L102.6,183.5L97.9,186"/><path d="M-71.5,24.1L-47.4,6.1L-42.3,2.2L-35,-2.7L-21.8,-11.7L-10.2,-20.5L9.3,-35.6"/><path d="M271.4,-118.3L273.8,-110.8L281.1,-92.1L290.3,-70.8L300.2,-50.9L312.3,-25"/><path d="M312.3,-25L322.7,-2.8L325.7,5.8L326.2,8.6"/><path d="M680,244.8L691.1,247.5L694.4,248.3L710.8,252.4L735.8,258.6L751.1,263.2L753.7,264L759.4,266.2"/><path d="M263.4,504.2L267.5,499.4"/><path d="M1065.8,706.2L1073,702.6L1076.1,701.2"/><path d="M1049.5,713.6L1065.8,706.2"/><path d="M1008,731.5L1029.3,723"/><path d="M-2.1,521.8L-10.4,508.6L-37.8,468.5L-50,450.5L-67.3,426.6"/><path d="M962.8,742.1L1003.3,733"/><path d="M300.4,461.3L323.2,434.8L341.9,414.3L345.4,410.4L346.4,409.4L355,399.4"/><path d="M326.2,8.6L326.9,29.1L327,32.3L327.1,37.1L327.4,47.7L328.3,77.4L328.8,95.6"/><path d="M679.9,155.2L745.2,165.6L749.6,166.3L761.4,168L765.4,168.8L770.9,169.7"/><path d="M479.6,692.1L469.6,680.5"/><path d="M497.9,713.6L491.7,706.2L489.1,703.2"/><path d="M507.1,724.3L497.9,713.6"/><path d="M489.1,703.2L485.6,699.2L479.6,692.1"/><path d="M388.6,586.5L367.5,562L351.6,543.5L349.3,541"/><path d="M1029.3,723L1040,718.1L1049.5,713.6"/><path d="M233.1,355.5L227.3,345.7L201.1,301.2L174.7,256.7L136,190.9L134.4,188.1"/><path d="M245.4,376.3L240.7,368.3"/><path d="M299.5,511.5L300.4,512.8L306.9,523.1L320.4,544.2L329.3,558.2L332.4,562.5"/><path d="M293.8,502.2L299.5,511.5"/><path d="M126.9,232.9L147.5,266.4"/><path d="M101.3,190.3L109.9,200.9"/><path d="M659.8,239.7L680,244.8"/><path d="M1076.1,701.2L1090.1,694.7L1094.3,692.8L1104.4,688.1"/><path d="M1003.3,733L1005.5,732.5L1008,731.5"/><path d="M239,532.3L258.5,509.8L261,506.9"/><path d="M261,506.9L263.4,504.2"/><path d="M832.9,713.5L858.1,734.6L862.3,738"/><path d="M108,680.9L106.6,682.4L105.7,683.5L99.7,689.9"/><path d="M882.8,295.9L886.2,296.3L906.3,299.4L923.1,302.1L923.7,302.2L954,306.6L958.9,307.6L971.4,309.8L972.5,310L1012.7,317.4L1015.7,318L1041,320.8L1044.5,321.2L1047,321.5"/><path d="M108,680.9L98.4,671.4L76.6,649.7L75.6,648.7L72.9,645.8"/><path d="M894.5,791.5L876.1,775.3L873.9,773.4L871.9,771.6"/><path d="M770.9,169.7L776.7,170.6L803.6,175L817.6,177.3L828.2,179.1L833.1,179.9L840.5,181.1L842.7,181.4L848.6,182.5"/><path d="M66.4,-130.7L68.7,-117.8L70.6,-100.6L70.5,-81.4L68.7,-61.7"/><path d="M319.8,496.7L311.5,484.8L300.1,468.6L297.7,464.5"/><path d="M254.1,440.4L277.9,478.9L281.1,483.7"/><path d="M869.1,390.8L868.5,400L868.2,403.3L866.7,421.1L865,452.1L859.5,515.4L856.5,553.7L854,570.6"/><path d="M898.5,190.7L906.1,191.9L920.5,194.2L945.5,198.3L980.9,204L1012.7,209.3L1027.9,211.7L1032,212.4L1036.5,213.1"/><path d="M898.5,190.7L897.4,196L893.7,217.3"/><path d="M849.7,615.5L854.6,594L858.7,576.9L861.1,559.2L863,539.5L865.8,505.9L867.8,484.7L870,460L871.7,436.6L873,414.3L873.2,410.7"/><path d="M60.5,64.2L60.8,82.1"/><path d="M355,399.4L361.5,391.4L364.4,388"/><path d="M234.8,358.4L233.1,355.5"/><path d="M236.9,361.9L234.8,358.4"/><path d="M240.7,368.3L236.9,361.9"/><path d="M1047,321.5L1065,323.6L1076.2,324.8L1105,328.1L1132.3,331.2L1136.2,331.6"/><path d="M830.1,284L869.3,293.2L873.4,294.2L878.8,295.1"/><path d="M48.1,619.9L47.4,618.5L41.4,599.3"/><path d="M811,696L800.4,708.1L792.4,716.7L786.1,723.5L781.9,728.1L768.8,742.8"/><path d="M72.9,645.8L52.4,624.9L48.1,619.9"/><path d="M878.8,295.1L882.8,295.9"/><path d="M873.2,410.7L873.8,402.8L874.9,388.5L875.5,381.7L876.4,370.6L878.6,345L879.9,326.9L881.8,305.9L882.1,301.7L882.8,295.9"/><path d="M878.8,295.1L877.2,300.7L874.5,322.4L873,344.8L870.5,376.4L869.1,390.8"/><path d="M847.6,601.2L842.1,621.6L835.8,644L832.6,654.4L830.5,661.5L828.1,668.9"/><path d="M818.1,702.3L811,696"/><path d="M775.5,751L785.8,738.2L787.3,736.4L808.6,713L818.1,702.3"/><path d="M448.7,115.2L442.6,114.3L431,112.4L417,110.1L376.7,103.5L368.4,102.1L362.2,101.1L356.6,100.2L353.8,99.7L344.6,98.2L343.7,98L340,97.4L328.8,95.6"/><path d="M849.1,178.7L843.1,177.7L828.3,175.5L824,174.8L797.3,170.7L792.6,170L789.1,169.4L780.3,168L777.2,167.6L770.6,166.5"/><path d="M1153.7,227.7L1150.5,227.4L1127.5,223.4L1114.6,221.3L1111.9,220.9L1094.5,218L1073.7,214.7L1056.5,211.9L1046,210.1L1040.2,209.2L1037.3,208.7"/><path d="M1037.3,208.7L1032.8,208L1021.6,206.2L1001.3,203L994.7,202L964.1,197.1L930.9,191.8L908.9,188.3L906.3,187.9L898.2,186.4"/><path d="M394.9,173L410.2,180.1L418.4,182.2"/><path d="M134.4,188.1L124.6,170.8"/><path d="M770.6,166.5L765.9,165.8L727.4,159.5L713,157.2L695.8,154.2L688.3,153.1L680.7,151.8"/><path d="M680.7,151.8L674.9,150.8L657.6,148.2L623.2,142.7L620.5,142.2L552.3,131.4L549.1,130.9L543.9,130"/><path d="M1036.5,213.1L1039.5,213.6L1081.3,219.9L1105.2,223.6L1122.1,226.1L1131.2,227.5L1144,229.5L1149.6,230.4L1153.2,230.9"/><path d="M898.2,186.4L891.5,185.5L860.1,180.7L856.3,179.9L849.1,178.7"/><path d="M543.5,132.8L548.5,133.6L564.2,136.1L577.7,138.4L591.3,140.6L616.5,144.8L620.1,145.4L668.9,153.4L673.9,154.2L679.9,155.2"/><path d="M543.9,130L538.5,129.3L521.4,126.5L495.2,122.5L483,120.6L470.3,118.7L456.8,116.6L448.7,115.2"/><path d="M447.5,117.7L456.1,118.9L464.1,120.2L536.5,131.6L538.7,132.1L543.5,132.8"/><path d="M828.1,668.9L821.1,683.1L811,696"/><path d="M854,570.6L847.6,601.2"/><path d="M818.1,702.3L824,695L827.7,689.6L830.6,683.5L832.6,678.1L836.4,667.7"/><path d="M836.4,667.7L838.1,660.8L839.6,656L842.9,645.6L849.7,615.5"/><path d="M461.9,712.2L469.3,720.7L472.4,724.4"/><path d="M97.9,186L89.6,191L34.1,224.5"/><path d="M8.8,241.2L7.6,242"/><path d="M8.8,241.2L11.6,245.2"/><path d="M109.9,200.9L120.8,219.7L126.9,232.9"/><path d="M97.9,186L101.3,190.3"/><path d="M-18.2,263.5L-0.6,253L1.1,251.9L11.6,245.2"/><path d="M34.1,224.5L22,231.8L17.8,234.5L8.8,241.2"/><path d="M278,487L281.1,483.7"/><path d="M267.5,499.4L278,487"/><path d="M328.8,95.6L329,98.3"/><path d="M7.6,242L-1.4,247.9L-77.6,294.5L-93.6,304.3L-100.6,308.9"/></g>
+    <path class="map-route" id="map-route" d="M229.9,201.9L419.3,251.6L436.9,264.1L443.2,268.2L515.8,318.1L551.9,344.4L576,347.2"/>
+    <text class="map-label map-label--main" dy="-12"><textPath href="#map-route" startOffset="30%">КРЕМЛЁВСКАЯ</textPath></text>
+    <path id="map-l0" d="M234.1,223.8L236.5,227.2L243.5,237.5L244.1,238.5L247.4,244.9L260.2,269L263.7,275.2L273.7,294L286.5,318L298.4,328.7L319.5,347.7L330.3,357.4L361.4,385.6L359.5,389.3L361.5,391.4L364.1,394.2L367.5,390.8L425.3,442.4L445.1,459.2L472.8,482.6L508.6,513L548.4,548.1L580.5,576.4L583.7,579.2" fill="none" stroke="none"/><text class="map-label"><textPath href="#map-l0" startOffset="22%">БАУМАНА</textPath></text>
+    <g class="map-stop"><circle cx="476.1" cy="123.4" r="5"/><text x="486.1" y="128.4">КАИ</text></g>
+    <g class="map-stop"><circle cx="865.4" cy="376" r="5"/><text x="855.4" y="381" text-anchor="end">УНИВЕРСИТЕТ</text></g>
+    <g class="map-metro"><circle cx="229.9" cy="201.9" r="11"/><text class="map-m" x="229.9" y="206.4">М</text><text x="225.9" y="183.9">«КРЕМЛЁВСКАЯ» · 750 М</text></g>
+    <g class="map-org"><circle class="map-ring" cx="576" cy="347.2" r="16"/><circle class="map-dot" cx="576" cy="347.2" r="7"/><text x="594" y="377.2">THE SCOOTER TIME · КРЕМЛЁВСКАЯ, 21</text></g>
+  </g>
+</svg>
+<!--/@MAP-->
+        </div>
+      </div>
+    </section>
+
+    <!-- 13 · Финал -->
+    <section class="finale" aria-labelledby="fin-title">
+      <h2 class="fin-h2" id="fin-title">Время ехать.</h2>
+      <div class="fin-road">
+        <svg class="fin-dash" viewBox="0 0 1600 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 20H1600"/></svg>
+        <div class="fin-ride">
+          <svg class="fin-scooter" viewBox="0 0 600 340" aria-hidden="true">
+            <g class="sc-body">
+              <path d="M326 262C326 214 352 186 400 180H512C548 182 572 210 570 244C570 255 565 262 555 262H496A58 58 0 0 0 384 262H326"/>
+              <path d="M384 178C386 165 398 158 416 158H500C516 158 526 166 524 178"/>
+              <path d="M470 212h44M474 223h40M478 234h34"/>
+              <path d="M200 262C194 206 204 152 226 112L240 114C226 158 228 214 262 262Z"/>
+              <path d="M262 262H330"/>
+              <path d="M104 270C106 238 128 222 154 222C180 222 198 238 202 262"/>
+              <path d="M174 224L222 118"/>
+              <path d="M204 108C204 95 214 88 230 88H268C280 88 284 97 277 103L262 110Z"/>
+              <path d="M272 92L304 84"/>
+              <path d="M260 88L268 60"/><ellipse cx="270" cy="53" rx="9" ry="6"/>
+              <circle class="sc-lamp" cx="208" cy="100" r="14"/>
+              <circle cx="208" cy="100" r="6"/>
+              <path d="M566 230v12"/>
+            </g>
+            <g class="sc-wheel"><circle cx="150" cy="284" r="38"/><circle cx="150" cy="284" r="12"/><path d="M150 246v76M112 284h76"/></g>
+            <g class="sc-wheel"><circle cx="440" cy="284" r="38"/><circle cx="440" cy="284" r="12"/><path d="M440 246v76M402 284h76"/></g>
+          </svg>
+       </div>
+      </div>
+      <div class="wrap fin-row">
+        <div class="fin-gauge" data-fin-gauge role="img" aria-label="Прибор: стрелка уходит в ноль"></div>
+        <p class="fin-txt">Мопед заправлен, шлем ждёт. Позвоните — и&nbsp;поехали.</p>
+        <a class="btn btn--signal btn--xl" href="tel:+78432165290" data-magnetic><svg class="ic"><use href="#i-phone"/></svg><span>Позвонить: 216-52-90</span></a>
+      </div>
+    </section>
+  </main>
+
+  <!-- 14 · Футер -->
+  <footer class="ftr">
+    <div class="wrap ftr-grid">
+      <div class="ftr-brand">
+        <img src="assets/img/logo/logo-160.webp" width="96" height="96" alt="The Scooter Time" loading="lazy">
+        <p class="hand-note">#thescootertime</p>
+      </div>
+      <div>
+        <p class="lbl">АДРЕС И РЕЖИМ</p>
+        <p>Казань, Кремлёвская улица, 21<br>Ежедневно 10:00–00:00</p>
+      </div>
+      <div>
+        <p class="lbl">ТЕЛЕФОНЫ</p>
+        <p><a href="tel:+78432165290">+7 (843) 216-52-90</a><br><a href="tel:+79625565290">+7 (962) 556-52-90</a></p>
+      </div>
+      <div>
+        <p class="lbl">МЫ В СЕТИ</p>
+        <p class="ftr-social"><a href="https://vk.ru/rent_scooters" target="_blank" rel="noopener"><svg class="ic"><use href="#i-vk"/></svg>VK</a><a href="https://www.instagram.com/rent_scooter/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-insta"/></svg>@rent_scooter</a></p>
+      </div>
+      <nav class="ftr-nav" aria-label="Разделы внизу">
+        <a href="#garage">Гараж</a><a href="#tariffs">Тарифы</a><a href="#services">Услуги</a><a href="#gift">Сертификат</a><a href="#find">Как найти</a>
+      </nav>
+    </div>
+    <div class="wrap ftr-bottom">
+      <p>© The Scooter Time, Казань</p>
+      <p>Демонстрационная версия сайта</p>
+    </div>
+  </footer>
+
+  <div class="mbar" aria-hidden="true">
+    <a class="btn btn--signal" href="tel:+78432165290" tabindex="-1"><svg class="ic"><use href="#i-phone"/></svg><span>Позвонить</span></a>
+    <a class="btn btn--ghost" href="https://vk.me/rent_scooters" target="_blank" rel="noopener" tabindex="-1"><svg class="ic"><use href="#i-vk"/></svg><span>VK</span></a>
+  </div>
+
+  <div class="lb" role="dialog" aria-modal="true" aria-label="Просмотр фото" data-lenis-prevent hidden>
+    <div class="lb-bg" data-lb-close></div>
+    <figure class="lb-frame">
+      <div class="lb-film">
+        <img class="lb-img" alt="">
+      </div>
+      <figcaption class="lb-cap"><span class="lbl lb-count">01 / 16</span><span class="lb-alt"></span></figcaption>
+    </figure>
+    <button class="round-btn lb-prev" type="button" aria-label="Предыдущее фото"><svg class="ic flip"><use href="#i-arrow"/></svg></button>
+    <button class="round-btn lb-next" type="button" aria-label="Следующее фото"><svg class="ic"><use href="#i-arrow"/></svg></button>
+    <button class="round-btn lb-close" type="button" aria-label="Закрыть" data-lb-close><span class="x" aria-hidden="true"></span></button>
+  </div>
+
+  <script>
+    /* Скрипты подключаются после загрузки страницы: сначала рисуется первый экран (шрифты, фото, вёрстка),
+       потом всё оживает. Порядок выполнения сохраняется (async = false). */
+    (function () {
+      var list = ["js/vendor/gsap.min.js","js/vendor/ScrollTrigger.min.js","js/vendor/Draggable.min.js","js/vendor/InertiaPlugin.min.js","js/vendor/SplitText.min.js","js/vendor/lenis.min.js","js/config.js","js/gauge.js","js/lightbox.js","js/hero.js","js/garage.js","js/tariffs.js","js/postcards.js","js/film.js","js/radio.js","js/passport.js","js/finale.js","js/main.js"];
+      function go() {
+        list.forEach(function (src) { var s = document.createElement('script'); s.src = src; s.async = false; document.body.appendChild(s); });
+      }
+      if (document.readyState === 'complete') go(); else addEventListener('load', function () { requestAnimationFrame(go); });
+    })();
+  </script>
+</body>
+</html>
