@@ -22,7 +22,7 @@ page.on('console', (m) => m.type() === 'error' && errors.push(m.text()));
 page.on('pageerror', (e) => errors.push('PAGEERROR ' + e.message));
 page.on('response', (r) => { if (r.status() >= 400) errors.push(`${r.status()} ${r.url()}`); });
 await page.addInitScript(() => { try { sessionStorage.setItem('st-pre', '1'); } catch (e) {} });
-await page.goto('http://localhost:8216/', { waitUntil: 'load' });
+await page.goto(process.env.URL || 'http://localhost:8216/', { waitUntil: 'load' });
 await sleep(1800);
 const go = (y) => page.evaluate((y) => { if (window.ST && ST.lenis) ST.lenis.scrollTo(y, { immediate: true, force: true }); else scrollTo(0, y); }, y);
 let y = 0, n = 0;

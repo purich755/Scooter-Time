@@ -12,7 +12,7 @@ const errors = [];
 page.on('pageerror', (e) => errors.push(e.message));
 page.on('console', (m) => m.type() === 'error' && errors.push(m.text()));
 await page.addInitScript(() => { try { sessionStorage.setItem('st-pre', '1'); } catch (e) {} });
-await page.goto('http://localhost:8216/', { waitUntil: 'load' });
+await page.goto(process.env.URL || 'http://localhost:8216/', { waitUntil: 'load' });
 await sleep(1200);
 let ok = 0, bad = 0;
 const check = (name, cond, extra = '') => { if (cond) ok++; else bad++; console.log(cond ? '✓' : '✗', name, extra); };
